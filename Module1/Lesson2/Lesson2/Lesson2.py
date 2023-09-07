@@ -1,4 +1,4 @@
-#Variables section
+#******************Variables section********************
 #you don't declare and initialize variables in python
 #a variable is initialized the moment you assign a value to it
 
