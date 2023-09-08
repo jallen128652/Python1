@@ -1,3 +1,12 @@
+# example header comments for the assignment submission
+
+# Author: Tony Lozano 
+# Course: ITSE 1371
+# Program Name: Example
+# Description: An example for module 1
+
+
+
 #setting up repo
 print("Hello, world!")
 print("testing 123")
