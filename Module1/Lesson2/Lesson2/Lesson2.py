@@ -1,14 +1,21 @@
+#******************MY NOTES FROM M1 LESSON2***************************
+
 #******************Variables section********************
 #you don't declare and initialize variables in python
 #a variable is initialized the moment you assign a value to it
 
 #casting
+#casting constructor functions allow you to specify a particular type of data on
+# the fly.
 x = str(3)	#x will be '3'
-y = int(3)	#y will be 3
+y = int(3.9)	#y will be 3, it truncates the value
 z = float(3)	#z will be 3.0
+w = float("3")  #w wille be 3.0
 print(x)
 print(y)
 print(z)
+print(w)
+#can also cast a bool as well
 
 #get the type of var
 print(type(x))
@@ -357,12 +364,14 @@ print(txt)
 #    \'	Single Quote	
 #    \\	Backslash	
 #    \n	New Line	
-#    \r	Carriage Return	
+#    \r	Carriage Return	moves it down a line but not to the beginning of the line
 #    \t	Tab	
 #    \b	Backspace	
 #    \f	Form Feed	
 #    \ooo	Octal value	
 #    \xhh	Hex value
+
+#
 
 
 
