@@ -50,11 +50,11 @@ fNetPay = fGrossPay - fTaxDeduction
 #output
 print("---------------------------\n\n")
 # User ID is the first initial + last name + last 4 of SSN
-					#char[0] of the var		#char[7] of the var to the end
+			#char[0] of the var		#char[7] of the var to the end
 print("User ID: " + sFName[0:1] + sLName + sSSN[7:] + "\n")
-					#formats fGrossPay float to 2 decimal places
+			#formats fGrossPay float to 2 decimal places
 print("Gross Pay: ${:,.2f}".format(fGrossPay))
-					#formats fTaxDeduction float to 2 decimal places
+			#formats fTaxDeduction float to 2 decimal places
 print("Tax Deduction: ${:,.2f}".format(fTaxDeduction))
-					#formats fNetPay float to 2 decimal places
+			#formats fNetPay float to 2 decimal places
 print("Net Pay: ${:,.2f}".format(fNetPay))
