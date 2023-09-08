@@ -63,4 +63,34 @@ or						OR
 """
 
 #***************INPUT FUNCTION AND INPUT***************************
-
+#The input function is used to get input from the user
+#You can specify a single arg or string prompt
+#When python encounters and input statement it waits for the user to reply
+#The return value is a string value 
+#example
+sName = input("Enter your name: ")
+print("Your name is " + sName)
+#you can only have one arg to input()
+#the arg can include string concatenation
+#example
+sName = input("Enter your name: ")
+print("Your name is " + sName)
+iAge = input("Enter your age " + sName + ": ")
+print(sName + " is " + iAge + " years old.")
+#casting inputs to integers or other datatypes
+sName = input("Enter your name: ")
+print("Your name is " + sName)
+#note we input an int in the next line so it breaks the concat
+iAge = int(input("Enter your age " + sName + ": "))
+#now we had to cast the int iAge to a string to fix the concat
+print(sName + " is " + str(iAge) + " years old.")
+#note that even though we cast iAge to str for the concat print it remains an int
+print(type(iAge))
+#complete example
+itemPrice = float(input("Enter item price: "))
+tax = itemPrice * 0.0825
+total = itemPrice + tax
+print("The tax is: ${:,.2f}".format(tax))
+print("The total is ${:,.2f}".format(total))
+#note itemPrice stays as a float
+print(type(itemPrice))
