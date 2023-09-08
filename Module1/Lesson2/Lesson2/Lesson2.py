@@ -162,3 +162,101 @@ x = bytes(5)	bytes
 x = bytearray(5)	bytearray	
 x = memoryview(bytes(5))	memoryview
 """
+# Datatype definitions
+# these classes mimic primitive datatypes
+"""
+int - integer is a whole number, negative or positive without decimals of 
+unlimited length
+float - floating point number, negative or positive with one or more decimals
+bool - contains the vals of True or False(case sensitive)
+string - a string of characters enclosed in single or double quotes;
+***Like many other popular programming languages, strings in Python are arrays of
+bytes representing unicode characters. However, Python does not have a character
+data type, a single character is simply a string with a length of 1. Square
+brackets can be used to access elements of the string.***
+"""
+
+#Datatype examples
+#int
+x = 1
+y = 35656222554887711
+z = -3255522
+
+print(type(x))
+print(type(y))
+print(type(z))
+
+#float
+x = 1.10
+y = 1.0
+z = -35.59
+
+print(type(x))
+print(type(y))
+print(type(z))
+
+#Float can also be scientific numbers with an "e" to indicate the power of 10.
+x = 35e3
+y = 12E4
+z = -87.7e100
+
+print(type(x))
+print(type(y))
+print(type(z))
+
+#string
+print("Hello")
+print('Hello')
+
+#multiliine string
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+print(a)
+# accessing characters at a string position: remember indices start at 0
+a = "Hello, World!"
+print(a[1])
+# looping through a string
+for x in "banana":
+  print(x)
+
+#string length fx
+a = "Hello, World!"
+print(len(a))
+
+#check string
+#To check if a certain phrase or character is present in a string, we
+# can use the keyword "in".
+txt = "The best things in life are free!"
+print("free" in txt)
+#using an "if" statement 
+txt = "The best things in life are free!"
+if "free" in txt:
+  print("Yes, 'free' is present.")
+#using the "not in" statement  
+txt = "The best things in life are free!"
+print("expensive" not in txt)
+
+#string slicing
+"""
+You can return a range of characters by using the slice syntax. Specify the start
+index and the end index, separated by a colon, to return a part of the string.
+"""
+#Get the characters from position 2 to position 5 (not included):
+b = "Hello, World!"
+print(b[2:5])
+#Get the characters from the start to position 5 (not included):
+b = "Hello, World!"
+print(b[:5]) #prints: Hello
+#Get the characters from position 2, and all the way to the end:
+b = "Hello, World!"
+print(b[2:]) #prints: llo, World!
+#Use negative indexes to start the slice from the end of the string:
+"""
+Get the characters:
+From: "o" in "World!" (position -5)
+To, but not included: "d" in "World!" (position -2):
+"""
+b = "Hello, World!"
+print(b[-5:-2])
