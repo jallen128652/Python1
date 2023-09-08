@@ -1,0 +1,50 @@
+#***********************NOTES FOR M1 LESSON4*********************
+#***************complete program example****************
+# Author: James Allen 
+# Course: ITSE 1373
+# Program Name: Example
+# Description: An example for module 1
+
+#basic program structure
+# 1. Top documentation
+# 2. vars and consts declarations
+# 3. user input
+# 4. calculations/processing
+# 5. output
+
+#consts section
+INCOME_TAX_RATE = 0.22
+
+#input vars section
+sFName = ""
+sLName = ""
+sSSN = "" # never used for calc so store as string
+iAge = 0
+fPayRate = 0.0
+fHoursWorked = 0.0
+
+#calculated vars section
+fTaxDeduction = 0.0
+fGrossPay = 0.0
+fNetPay = 0.0
+
+#get user input section
+print("Simple Tax Calculator \n\n")
+sFName = input("\t Enter First Name: ")
+sLName = input("\t Enter Last Name: ")
+sSSN = input("\t Enter Social Security Number (555-55-5555): ")
+
+iAge = int(input("\t Enter Age: "))
+fPayRate = float(input("\t Enter Hourly Pay Rate: "))
+fHoursWorked = float(input("\t Enter Hours Worked: "))
+
+#calculations
+# work it out on paper first
+# make sure you understand the problem
+# just because there's no syntax errors and you recieve values doesn't mean the
+#  logic is correct
+fGrossPay = fHoursWorked * fPayRate
+fTaxDeduction = fGrossPay * INCOME_TAX_RATE
+fNetPay = fGrossPay - fTaxDeduction
+
+#output
