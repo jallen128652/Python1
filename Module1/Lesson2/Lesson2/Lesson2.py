@@ -225,7 +225,7 @@ for x in "banana":
 a = "Hello, World!"
 print(len(a))
 
-#check string
+#***********check string***************
 #To check if a certain phrase or character is present in a string, we
 # can use the keyword "in".
 txt = "The best things in life are free!"
@@ -238,7 +238,7 @@ if "free" in txt:
 txt = "The best things in life are free!"
 print("expensive" not in txt)
 
-#string slicing
+#*****************string slicing*****************
 """
 You can return a range of characters by using the slice syntax. Specify the start
 index and the end index, separated by a colon, to return a part of the string.
@@ -260,3 +260,108 @@ To, but not included: "d" in "World!" (position -2):
 """
 b = "Hello, World!"
 print(b[-5:-2])
+#can also assign to another var
+# instead of print
+B = b[-5:-2]
+print(B)
+#*******************modifying strings********************
+#when using these fx's the original string is not modified, just the end usage of the
+#the data is.
+#upper()
+#The upper() method returns the string in upper case:
+a = "Hello, World!"
+print(a.upper())
+#lower()
+#The lower() method returns the string in lower case:
+a = "Hello, World!"
+print(a.lower())
+#strip()
+#The strip() method removes any whitespace from the beginning or the end:
+a = " Hello, World! "
+print(a.strip()) # returns "Hello, World!"
+#can also remove double quotes around a string
+#example:
+a = '"Hello World"'
+print(a)
+print(a.strip('\"')) #the backslah removes the double quotes. type of escape sequence
+#replace()
+#The replace() method replaces a string with another string:
+a = "Hello, World!"
+print(a.replace("H", "J")) #always room for Jello
+#split()
+#The split() method returns a list where the text between the specified separator
+# becomes the list items.
+#Example
+#The split() method splits the string into substrings if it finds instances of
+# the separator:
+a = "Hello, World!"
+print(a.split(",")) # returns ['Hello', ' World!']
+#to prove that after using a modifier method the values stored doesn't change
+print(a) #prints Hello, World!
+#concatenate strings
+#To concatenate, or combine, two strings you can use the + operator.
+a = "Hello"
+b = "World"
+c = a + b
+print(c)
+#or
+print(a + b)
+#or add a space
+a = "Hello"
+b = "World"
+c = a + " " + b
+print(c)
+#*****Can't concat strings with ints as in this example*********
+#age = 36
+#txt = "My name is John, I am " + age 
+#print(txt)
+#but you can cast the int to str
+age = 36
+txt = "My name is John, I am " + str(age)
+print(txt)
+#format()
+#The format() method takes the passed arguments, formats them, and places them in
+# the string where the placeholders {} are:
+#Example
+#Use the format() method to insert numbers into strings:
+age = 36
+txt = "My name is John, and I am {}"
+print(txt.format(age))
+#The format() method takes unlimited number of arguments, and are placed into the
+# respective placeholders:
+#Example:
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want {} pieces of item {} for {} dollars."
+print(myorder.format(quantity, itemno, price))
+#You can use index numbers {0} to be sure the arguments are placed in the correct
+# placeholders:
+#Example:
+quantity = 3
+itemno = 567
+price = 49.95
+myorder = "I want to pay {2} dollars for {0} pieces of item {1}."
+print(myorder.format(quantity, itemno, price)) #the indices represent the vars in the code block
+#you can use format() decimal precision
+pi = 3.14159
+print("pi is equal to {:.2f}".format(pi))
+#********escape characters##########
+#escape characters allow you to use characters that are illegal in strings
+#The escape character allows you to use double quotes when you normally would not
+# be allowed:
+txt = "We are the so-called \"Vikings\" from the north."
+#example escape characters
+"""
+\'	Single Quote	
+\\	Backslash	
+\n	New Line	
+\r	Carriage Return	
+\t	Tab	
+\b	Backspace	
+\f	Form Feed	
+\ooo	Octal value	
+\xhh	Hex value
+"""
+
+
