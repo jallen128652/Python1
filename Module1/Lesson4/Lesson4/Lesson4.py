@@ -1,7 +1,7 @@
 #***********************NOTES FOR M1 LESSON4*********************
 #***************complete program example****************
 # Author: James Allen 
-# Course: ITSE 1373
+# Course: ITSE 1373 7P1
 # Program Name: Example
 # Description: An example for module 1
 
