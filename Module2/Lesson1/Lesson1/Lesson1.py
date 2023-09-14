@@ -1,4 +1,4 @@
-#*******************Notes Module2 Lesson1*********************
+#*******************Notes Module2*********************
 #Python Comparison Operators
 #Comparison operators are used to compare two values:
 
@@ -195,5 +195,85 @@ if 5 > 2:
  print("Five is greater than two!")
         print("Five is greater than two!")
 """
+#ex1
+#Simple if
+num1 = int(input("Enter a number: "))
 
+if num1 > 100:
+  print("The number is greater than 100")
+  num2 = num1 + 50 #num2 is not local to just this block see the next print
+  
+print(num2)
+
+#ex2
+#Multiple elses with elif
+grade = input("Enter a letter grade: ")
+grade = grade.upper() #convert to upper and store in grade var
+
+if grade == "A":
+  print("The GPA is 4.0")
+elif grade == "B":
+  print("The GPA is 3.0")
+elif grade == "C":
+  print("The GPA is 2.0")
+elif grade == "D":
+  print("The GPA is 1.0")
+elif grade == "F":
+  print("The GPA is 0.0")
+else:
+  print("The letter you entered is not valid.")
+  
+#ex3
+#Nested if statements
+grossPay = 0.0
+hoursWorked = int(input("Enter hours worked: "))
+payRate = float(input("Enter hourly pay rate: "))
+hourlyEmployee = input("Is the employee hourly? (y/n): ")
+hourlyEmployee = hourlyEmployee.upper()
+if hoursWorked > 40:
+    if hourlyEmployee == "Y":
+      basePay = 40 * payRate
+      overTime = (hoursWorked - 40) * payRate
+      grossPay = basePay + overTime
+    else:
+      grossPay = hoursWorked * payRate
+else:
+  grossPay = hoursWorked * payRate
+  
 #****************Range testing***************
+"""
+if you want to test a var against a range, python has a special syntax you
+can use.
+"""
+#consider the standard method of checking range:
+#   is the number between 1 and 100?
+number = int(input("Enter a number between 1 and 100: "))
+
+if number >= 1 and number <= 100:
+  print("In range.")
+else:
+  print("Not in range.")
+  
+#python special range syntax method:
+number = int(input("Enter a number between 1 and 100: "))
+
+if (1 <= number <= 100):
+  print("In range.")
+else:
+  print("Not in range.")
+  
+#Practice exercise:
+length = int(input("Enter the lenght of a rectangle: "))
+width =  int(input("Enter the lenght of a rectangle: "))   
+
+if length == width:
+    print("The rectangle is a square.")
+else:
+    print("The rectangle is not a square.")
+    if length > width:
+      print("The length of the rectangle is longer.")
+    else:
+      print("The width of the rectangle is longer.")
+      
+
+  
