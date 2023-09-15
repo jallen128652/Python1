@@ -65,3 +65,27 @@ while sRepeat.upper() == "Y":
 	print("Net Pay: ${:,.2f}".format(fNetPay))
 	#update loop control var
 	sRepeat = input("Do you want to calculate another income tax? (y/n)")
+	
+#*****************secret numbers guessing game***************
+# 2. vars and consts declarations
+secretNumbers = [67, 40, 23, 78, 12]
+
+print("Guess the secret number!")
+# 3. user input
+guess = int(input("Enter your guess (1-100): "))
+while guess < 1 or guess > 100:
+	print("That guess is out of range!")
+	guess = int(input("Enter your guess (1-100): "))
+# 4. calculations/processing
+print("Checking if you guessed a secret number....")
+found = False #default loop control value
+#loops through the list
+for x in secretNumbers:
+	if x == guess:
+		found = True
+		break
+# 5. output
+if found == True:
+	print(str(guess) + " is a secret number!")
+else:	
+	print("Your guess is not a secret number!")
