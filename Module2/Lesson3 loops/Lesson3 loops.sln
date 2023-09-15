@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Lesson3 loops", "Lesson3 loops\Lesson3 loops.pyproj", "{735820AB-3941-43FC-8782-2E5F9B6D6CF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{735820AB-3941-43FC-8782-2E5F9B6D6CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{735820AB-3941-43FC-8782-2E5F9B6D6CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EA1B0B83-C610-4510-AB58-8592A8BC7507}
+	EndGlobalSection
+EndGlobal
