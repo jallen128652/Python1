@@ -197,7 +197,7 @@ if 5 > 2:
 """
 #ex1
 #Simple if
-num1 = int(input("Enter a number: "))
+num1 = int(input("Enter a number greater than 100: "))
 
 if num1 > 100:
   print("The number is greater than 100")
@@ -264,7 +264,7 @@ else:
   
 #Practice exercise:
 length = int(input("Enter the lenght of a rectangle: "))
-width =  int(input("Enter the lenght of a rectangle: "))   
+width =  int(input("Enter the width of a rectangle: "))   
 
 if length == width:
     print("The rectangle is a square.")
@@ -274,6 +274,84 @@ else:
       print("The length of the rectangle is longer.")
     else:
       print("The width of the rectangle is longer.")
+      
+#*********************Loops*************************
+#******************while loop*****************
+#syntax:
+"""
+#loop control var
+num1 = 1
+while condition:
+    #indented code line or block
+    print("inside loop")
+    #update loop control var
+    num1 += 1
+    
+#outside the loop after exit
+print("after loop")    
+
+While loops can be sentinel controlled or counter controlled
+sentinel controlled stops when the condition detects certain values
+counter controlled repeats based on a counter
+
+sentinel values are values that trigger loop entry or exit
+
+"""
+#example sentinel controlled while loop
+inputValue = int(input("Enter a number or -999 to exit: "))
+
+while inputValue != -999:
+  print("Loop body executed.")
+  inputValue = int(input("Enter another number or -999 to exit: ")) 
+  
+print("You have exited the loop.")
+
+#example2 with range
+inputValue = int(input("Enter a number between 1 and 100: "))
+
+while inputValue < 1 or inputValue > 100:
+  print("Number not in range.")
+  inputValue = int(input("Enter another number between 1 and 100: ")) 
+  
+print("You have exited the loop.")
+
+#example counter controlled while loop
+#counter var
+num1 = 1
+while num1 <= 5:
+  print(num1)
+  num1 += 1
+  
+print(str(num1) + " is the final count")
+
+# counter controlled while loop with accumulator
+c = 1
+total = 0
+newVal = 0
+while c <=5:
+  newVal = int(input("Enter number " + str(c) + ": "))
+  total = total + newVal #accumulation
+  c += 1 #loop counter
+  
+print("The total is: " + str(total))
+
+#*********************for loops**********************
+"""
+Python for loops are used for iterating through a sequence, range, or
+other iterable object.
+
+A common sequnce structure is a python list
+
+A python list is a list of items stored in one var.
+
+#declaration of list days
+days = ["Monday", "Tuseday", "Wednesday", "Thursday", "Friday"]
+
+We will discuss lists more in depth in later units. Just remember they 
+are a list of items in one var.
+"""
+
+
       
 
   
