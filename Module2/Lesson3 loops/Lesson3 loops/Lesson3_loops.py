@@ -173,3 +173,56 @@ gamma 2
 for x in range(5, 51, 5):
   print(x)
   
+#****************keywords for while and for loops*****************
+"""
+Special Control Structure Keywords:
+Python Break syntax
+Python Continue syntax
+Python Else clause #the else used with loops
+"""
+#Break statement
+#The break statement exits the loop before all the iterations complete
+#example
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+for x in days:
+  print(x)
+  if x == "Wednesday":
+    break
+# this will exit the loop after printing Wednesday  
+#**not a best practice** use sparingly and only with reason
+
+#Continue statement
+#The continue statement stops the current iteration and moves to the next
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+for x in days:
+  print(x)
+  if x == "Wednesday":
+    continue
+  print(x)  
+#this skips Wednesday in the print and continues to Friday
+
+#Else clause with for loops
+#The else keyword can be used to designate something that happens at the end
+# of a for loop
+#The else block will NOT execute if you break out of the loop
+# as it's part of the loop.
+#example
+days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+for x in days:
+  print(x)
+else:
+  print("Those are the weekdays!") # executes at the end of the loop
+  
+#Scope
+#Python variables are scoped to the innermost fx, class, or module in which
+# they're assigned.
+
+#Variables declared inside if and while blocks have a fx, class, module
+# scope. this is different from c/c++/java.
+#example
+if (True):
+  A = "Hi!" #First time A is declared
+print(A) #prints: Hi!  
+# it's a bottom up effect. so if it's declared inside, it still exists
+#  outside the block INNERMOST to OUTERMOST
+  
