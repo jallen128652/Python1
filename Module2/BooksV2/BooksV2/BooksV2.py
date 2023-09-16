@@ -9,9 +9,8 @@
 #   information for a book, print the following in comma-delimited format. Last
 #    4 characters of ISBN, First 5 letters of Title, Number on hand, price *
 #     on hand with 2 decimal places.
-#vars and consts
+#vars and consts and lists
 bookData = []
-
 #get user input section
 print("Welcome to the Bookstore! \n\n")
 books = input("Would you like to add a book title order? (y/n) ")
