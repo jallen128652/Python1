@@ -65,5 +65,4 @@ inNum = int(input("Enter an integer or -1 to quit: "))
 while inNum != -1:
     myList.append(inNum)
     inNum = int(input("Enter another integer or -1 to quit: "))
-print(myList)
- 
+print(myList) 
