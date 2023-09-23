@@ -1,0 +1,3 @@
+Bill,Smith,bsmith@noemail.com,2,16,1994
+Tony,Lozano,tony.lozano@tstc.edu,8,1,1901
+Bill,Doe,bd@gmail.edu,12,30,2001
