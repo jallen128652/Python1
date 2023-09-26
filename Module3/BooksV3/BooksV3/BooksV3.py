@@ -28,16 +28,18 @@
 
 # File4 will write to mystery.txt. Write out only the title for all books whose
 #  Genre is mystery “MYS”
-
 #opens book.txt for read
 file = open("book.txt", "r")
 #creates and opens writeable files
 file2 = open("output.txt", "w")
 file3 = open("reorder.txt", "w")
 file4 = open("mystery.txt", "w")
+print("Creating files...")
 #loops through the linestrings storing the line list items in list vars
 for lineString in file:
+    #separate the data
     lineList = lineString.strip().split(",")
+    #store in vars
     bookId = lineList[0]
     title =  lineList[1]
     genre = lineList[2]
@@ -69,5 +71,7 @@ file.close()
 file2.close()
 file3.close()
 file4.close()
+print("File creation complete.\nPlease check your repo for output.txt, reorder.txt, and mystery.txt.")
+
 
                 
