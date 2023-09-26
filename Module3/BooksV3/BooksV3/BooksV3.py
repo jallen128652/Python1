@@ -28,3 +28,22 @@
 
 # File4 will write to mystery.txt. Write out only the title for all books whose
 #  Genre is mystery “MYS”
+
+#opens book.txt for read
+file = open("book.txt", "r")
+#creates and opens writeable files
+file2 = open("output.txt", "w")
+file3 = open("reorder.txt", "w")
+file4 = open("mystery.txt", "w")
+#loops through the linestrings storing the line list items in list vars
+for lineString in file:
+    lineList = lineString.strip().split(",")
+    bookId = lineList[0]
+    title =  lineList[1]
+    genre = lineList[2]
+    price = lineList[3]
+    paperBack = lineList[4]
+    amountInInventory = lineList[5]
+    authorFname = lineList[6]
+    authorLname = lineList[7]
+    publisher = lineList[8]
