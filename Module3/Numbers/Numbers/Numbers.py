@@ -23,8 +23,8 @@ choice = input("Would you like to enter 10 odd numbers? (Y/N): ")
 #creates a file to store the output data
 # ****note if running multiple test iterations comment out the following 2 lines
 #  because the file has already been created****
-#file = open("output.txt", "x") 
-#file.close()
+file = open("output.txt", "x") 
+file.close()
 # while loop so user can use this program as many times as they want
 while (choice.upper() == "Y"):
     #loops 10 times for 10 input numbers 
