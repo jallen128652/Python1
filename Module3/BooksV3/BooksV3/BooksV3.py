@@ -34,7 +34,7 @@ file = open("book.txt", "r")
 #creates and opens writeable files
 file2 = open("output.txt", "w")
 file3 = open("reorder.txt", "w")
-file4 = open("mystery.txt", "w")
+#file4 = open("mystery.txt", "w")
 #loops through the linestrings storing the line list items in list vars
 for lineString in file:
     lineList = lineString.strip().split(",")
@@ -47,3 +47,16 @@ for lineString in file:
     authorFname = lineList[6]
     authorLname = lineList[7]
     publisher = lineList[8]
+    #writes | delimited list to output.txt
+    file2.write(str(bookId) + " |" + title + " |" + genre + " |" + str(price) +
+                " |" + paperBack + " |" + str(amountInInventory) + " |" + 
+                authorFname + " |" + authorLname +  " |" + publisher + "\n")
+    #calcs total
+    price = float(price)
+    amountInInventory = int(amountInInventory)
+    total = price * amountInInventory
+    #checks if inventory amount is < $50 and writes to reorder.txt
+    if total < 50:
+        file3.write(str(bookId) + "," + title + ", " + str(price) + ", " +
+                    str(amountInInventory) + "\n")
+                
