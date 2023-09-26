@@ -34,7 +34,7 @@ file = open("book.txt", "r")
 #creates and opens writeable files
 file2 = open("output.txt", "w")
 file3 = open("reorder.txt", "w")
-#file4 = open("mystery.txt", "w")
+file4 = open("mystery.txt", "w")
 #loops through the linestrings storing the line list items in list vars
 for lineString in file:
     lineList = lineString.strip().split(",")
@@ -59,4 +59,15 @@ for lineString in file:
     if total < 50:
         file3.write(str(bookId) + "," + title + ", " + "${:,.2f}".format(price) + ", " +
                     str(amountInInventory) + "\n")
+    #strips anything added when the var was stored
+    genre = genre.strip()
+    #checks if genre is MYS and writes to mystery.txt
+    if (genre == "MYS"):
+        file4.write(title + "\n")
+#close the files        
+file.close()
+file2.close()
+file3.close()
+file4.close()
+
                 
