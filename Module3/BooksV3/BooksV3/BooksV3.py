@@ -57,6 +57,6 @@ for lineString in file:
     total = price * amountInInventory
     #checks if inventory amount is < $50 and writes to reorder.txt
     if total < 50:
-        file3.write(str(bookId) + "," + title + ", " + str(price) + ", " +
+        file3.write(str(bookId) + "," + title + ", " + "${:,.2f}".format(price) + ", " +
                     str(amountInInventory) + "\n")
                 

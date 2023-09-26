@@ -1,24 +1,24 @@
-1003, Song of Solomon, 14.0, 3
-1004, Group: Six People in Search of a Life, 10.4, 2
-1005, A Deepness in the Sky, 7.19, 6
-1006, Second Wind, 24.95, 2
-1007, The Edge, 6.99, 0
-1008, Slay Ride, 6.99, 1
-1009, Magic Terror, 7.99, 4
-1011, Black House, 18.81, 0
-1012, Dreamcatcher: A Novel, 19.6, 1
-1015, When Rabbit Howls, 6.29, 7
-1016, Van Gogh and Gauguin, 21.0, 1
-1017, Catch-22, 12.0, 3
-1018, Venice, 24.5, 2
-1022, Band of Brothers, 9.6, 1
-1025, Nine Stories, 5.99, 1
-1026, Franny and Zooey, 5.99, 4
-1027, The Catcher in the Rye, 5.99, 6
-1028, Electric Light, 14.0, 3
-1029, The Stranger, 8.0, 3
-1031, The Fall, 8.0, 0
-1033, Of Mice and Men, 6.95, 5
-1034, Travels with Charley, 7.95, 2
-1036, The Grapes of Wrath, 13.0, 0
-1038, The Soul of a New Machine, 11.16, 4
+1003, Song of Solomon, $14.00, 3
+1004, Group: Six People in Search of a Life, $10.40, 2
+1005, A Deepness in the Sky, $7.19, 6
+1006, Second Wind, $24.95, 2
+1007, The Edge, $6.99, 0
+1008, Slay Ride, $6.99, 1
+1009, Magic Terror, $7.99, 4
+1011, Black House, $18.81, 0
+1012, Dreamcatcher: A Novel, $19.60, 1
+1015, When Rabbit Howls, $6.29, 7
+1016, Van Gogh and Gauguin, $21.00, 1
+1017, Catch-22, $12.00, 3
+1018, Venice, $24.50, 2
+1022, Band of Brothers, $9.60, 1
+1025, Nine Stories, $5.99, 1
+1026, Franny and Zooey, $5.99, 4
+1027, The Catcher in the Rye, $5.99, 6
+1028, Electric Light, $14.00, 3
+1029, The Stranger, $8.00, 3
+1031, The Fall, $8.00, 0
+1033, Of Mice and Men, $6.95, 5
+1034, Travels with Charley, $7.95, 2
+1036, The Grapes of Wrath, $13.00, 0
+1038, The Soul of a New Machine, $11.16, 4
