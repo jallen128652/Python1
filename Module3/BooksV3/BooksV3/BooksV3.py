@@ -34,7 +34,7 @@ file = open("book.txt", "r")
 file2 = open("output.txt", "w")
 file3 = open("reorder.txt", "w")
 file4 = open("mystery.txt", "w")
-print("Creating files...")
+print("\nCreating files . . .")
 #loops through the linestrings storing the line list items in list vars
 for lineString in file:
     #separate the data
@@ -71,7 +71,7 @@ file.close()
 file2.close()
 file3.close()
 file4.close()
-print("File creation complete.\nPlease check your repo for output.txt, reorder.txt, and mystery.txt.")
+print("\nFile creation complete.\nPlease check your repo for output.txt, reorder.txt, and mystery.txt.")
 
 
                 
