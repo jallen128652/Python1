@@ -1,0 +1,3 @@
+The smallest number is: 1
+The largest number is: 1
+The average of the numbers is: 1.0
