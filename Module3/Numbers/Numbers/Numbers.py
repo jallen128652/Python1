@@ -23,18 +23,20 @@ choice = input("Would you like to enter 10 odd numbers? (Y/N): ")
 #creates a file to store the output data
 # ****self note if running multiple test iterations comment out the following 2 lines
 #  after first iteration****
-file = open("output.txt", "x") 
-file.close()
+#file = open("output.txt", "x") 
+#file.close()
 # while loop so user can use this program as many times as they want
 while (choice.upper() == "Y"):
-    #loops 10 times for 10 input numbers 
-    for x in range(10):        
+    #loops 10 times for 10 input numbers
+    min1 = 0 #loop control var
+    while min1 < 10:        
         num = int(input("Please enter an odd number: "))
         # validates the number is odd or re-prompts the user
         if (num % 2) == 1:
             numbers.append(num)
+            min1 += 1
         else:
-             num = int(input("That number was even, please enter an odd number: "))         
+             print("That number was even! ")             
     #prints the user inputs
     print("\nYou entered the following numbers: ")
     print(numbers[0:])
