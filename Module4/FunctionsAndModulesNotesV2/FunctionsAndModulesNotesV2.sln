@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FunctionsAndModulesNotesV2", "FunctionsAndModulesNotesV2\FunctionsAndModulesNotesV2.pyproj", "{DAB444D2-FBDA-43CB-9BDA-661B12F95E81}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAB444D2-FBDA-43CB-9BDA-661B12F95E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB444D2-FBDA-43CB-9BDA-661B12F95E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DDC8A5C3-622E-49D1-A00C-92BB416A825A}
+	EndGlobalSection
+EndGlobal
