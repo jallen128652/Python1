@@ -41,7 +41,7 @@ def multiplyby(p):
 times2 = multiplyby(2) # p is 2
 times3 = multiplyby(3)
 
-#calls the fx and passes the inner arg
+#calls the fx and passes the inner arg to the lambda fx
 print(times2(5)) # x is 5
 print(times3(5))
 #this allows us to create multiple functions from just the calls
