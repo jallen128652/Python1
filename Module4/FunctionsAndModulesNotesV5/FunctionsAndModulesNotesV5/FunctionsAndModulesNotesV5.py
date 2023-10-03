@@ -17,3 +17,12 @@ directory as your python app.
 There are ways to import custom modules from directories, but we won't cover them
 in this lesson.
 """
+"""
+Step1. in solution explorer right click on the project folder and click add
+
+Step2. Select new item
+
+Step3. Select Empty Module and modify the name
+
+Step4. Click the add button
+"""
