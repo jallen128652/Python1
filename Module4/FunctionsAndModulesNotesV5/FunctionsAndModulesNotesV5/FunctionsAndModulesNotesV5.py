@@ -26,3 +26,22 @@ Step3. Select Empty Module and modify the name
 
 Step4. Click the add button
 """
+#in main python file
+#import the module using the below syntax:
+# import fileName as alias(alias is optional, but reduces typing)
+import myModule as mm
+#calls the module.fx(arg, arg) and stores it in a var
+iBigger = mm.larger(1, 2) #note w/out the alias you would type out the filename
+#prints the var
+print(iBigger)
+#calls the module.var and prints
+print(mm.pi)
+
+#works with 2nd fx
+
+hw = int(input("Enter Hours Worked: "))
+pr = float(input("Enter Hourly Pay Rate: "))
+
+GrossPay = mm.calculateGrossPay(hw, pr)
+
+print("Gross Pay is ${:,.2f}".format(GrossPay))
