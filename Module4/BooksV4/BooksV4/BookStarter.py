@@ -8,7 +8,7 @@
 
 
 import os
-
+#prompt user for menu option
 def printMenu():
     clear()
     print("-------- Menu --------\n")
@@ -24,7 +24,13 @@ clear = lambda: os.system('cls')
 
 x = printMenu()
 print(x)
-
+#prompt user for menu option
+# option1 iterate through list with one book per line
+# option2 take inputs and append list and file
+# option3 search the list by book id or title
+# option4 delete a book in entirety( search for book and delete line)
+# option5 write the complete list to output.txt
+# option6 quit (need a loop)
 
 sID = []
 sTitle = []
