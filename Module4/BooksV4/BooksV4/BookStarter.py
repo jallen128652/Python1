@@ -22,7 +22,8 @@ def printMenu():
 
 clear = lambda: os.system('cls')
 
-
+x = printMenu()
+print(x)
 
 
 sID = []
