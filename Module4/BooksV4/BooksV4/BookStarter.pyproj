@@ -5,12 +5,12 @@
     <ProjectGuid>b29d4279-e5b2-4413-aff3-6bcd56582280</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>BooksStarter.py</StartupFile>
+    <StartupFile>BookStarter.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>BooksStarter</Name>
+    <Name>BookStarter</Name>
     <RootNamespace>BooksV4</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -22,7 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BooksStarter.py" />
+    <Compile Include="BookStarter.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

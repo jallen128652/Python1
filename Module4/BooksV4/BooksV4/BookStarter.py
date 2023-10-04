@@ -1,6 +1,6 @@
 # Author: James Allen 
 # Course: ITSE 1373 7P1
-# Program Name: BooksStarter
+# Program Name: BookStarter
 # Description: This program manipulates the book.txt file and prints
 # Note: Remember to save often and commit to git once tested
 

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BooksStarter", "BooksV4\BooksStarter.pyproj", "{B29D4279-E5B2-4413-AFF3-6BCD56582280}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "BookStarter", "BooksV4\BookStarter.pyproj", "{B29D4279-E5B2-4413-AFF3-6BCD56582280}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
