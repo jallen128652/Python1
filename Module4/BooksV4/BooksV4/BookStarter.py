@@ -100,7 +100,7 @@ while (go.upper() == "Y"):
         aLname = input("Please enter the authors last name: ")
         bPublisher = input("Please enter the publishers name: ")
         #print and validate the entry
-        print("\nYou entered: " + str(bID) + " " + bTitle + " " + 
+        print("\nYou entered: " + bID + " " + bTitle + " " + 
               bGenre + " " + "${:,.2f}".format(bPrice) + " " + bPaperback + " " +
               str(bOnHand) + " " + aFname + " " + aLname + " " +
               bPublisher)
