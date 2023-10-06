@@ -9,18 +9,12 @@
 
 import os
 
+import helper as h
+
 clear = lambda: os.system('cls')
 
 #prompt user for menu option
-def printMenu():
-    clear()
-    print("-------- Menu --------\n")
-    print("1. View Books Entry")
-    print("2. Add Book Entry")
-    print("3. Find Book Entry")
-    print("4. Delete Book Entry")
-    print("5. Write Book List to File")    
-    print("0. Quit")
+
 
 sID = []
 sTitle = []
@@ -53,6 +47,8 @@ while (go.upper() == "Y"):
     choice = int(input("Enter a menu option number: "))
     # option1 iterate through list with one book per line
     if choice == 1: 
+        clear()
+        print("--------View Books Entry--------\n")
         for x in range(len(sID)):
             print(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
                   str(fPrice[x]) + ", " + sPaperback[x] + ", " +
@@ -61,6 +57,8 @@ while (go.upper() == "Y"):
         junk = input("\nPress Enter to return to the menu.")    
     # option2 take inputs and append list and file
     elif choice == 2:
+        clear()
+        print("--------Add Book Entry--------\n")
         bID = int(input("Please enter the 4 digit book ID: "))
         bTitle = input("Please enter the book title: ")
         bGenre = input("FIC = fiction, PSY = Psychology, SFI = SciFi, MYS = Mystery, HOR = Horror\nCMP = Computers, ART = Art, PHI = Philosophy, POE = Poetry, TRA = Travel\nPlease enter the book genre 3 letter code: ")
@@ -140,7 +138,7 @@ while (go.upper() == "Y"):
     # option5 write the complete list to output.txt
     elif choice == 5:
         clear()
-        print("------Write Lists to File------\n")
+        print("------Write Book List to File------\n")
         file2 = open("output.txt", "w")
         for x in range(len(sID)):
             file2.write(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
