@@ -1,4 +1,4 @@
-Band1001, Beloved, FIC, 12.95, Y, 5, Toni, Morrison, Plume
+1001, Beloved, FIC, 12.95, Y, 5, Toni, Morrison, Plume
 1002, Jazz, FIC, 12.95, Y, 4, Toni, Morrison, Plume
 1003, Song of Solomon, FIC, 14.0, Y, 3, Toni, Morrison, Plume
 1004, Group: Six People in Search of a Life, PSY, 10.4, Y, 2, Paul, Solotaroff, Berkley Publishing

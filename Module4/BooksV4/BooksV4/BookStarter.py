@@ -8,6 +8,9 @@
 
 
 import os
+
+clear = lambda: os.system('cls')
+
 #prompt user for menu option
 def printMenu():
     clear()
@@ -19,9 +22,6 @@ def printMenu():
     print("5. Write Book List to File")    
     print("0. Quit")
 
-
-clear = lambda: os.system('cls')
-
 sID = []
 sTitle = []
 sGenre = []
@@ -31,8 +31,6 @@ iOnHand = []
 sAuthorFirst = []
 sAuthorLast = []
 sPublisher = []
-
-printMenu()
 
 file1 = open("book.txt", "r")
 for sLine in file1:
@@ -48,10 +46,11 @@ for sLine in file1:
     sPublisher.append(record[8].strip())
 file1.close()    
 
+go = "Y" #sentinal val
 
-#prompt user for menu option
-choice = int(input("Enter a menu option number: "))
-while choice != 0:
+while (go.upper() == "Y"):
+    printMenu()
+    choice = int(input("Enter a menu option number: "))
     # option1 iterate through list with one book per line
     if choice == 1: 
         for x in range(len(sID)):
@@ -59,10 +58,7 @@ while choice != 0:
                   str(fPrice[x]) + ", " + sPaperback[x] + ", " +
                  str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
                 sAuthorLast[x] + ", " + sPublisher[x])
-        done = input("\nOnce you complete reviewing the list enter Y to return to the main menu: ")
-        if done.upper() == "Y":
-            printMenu()
-            choice = int(input("Enter a menu option number: "))     
+        junk = input("\nPress Enter to return to the menu.")    
     # option2 take inputs and append list and file
     elif choice == 2:
         bID = int(input("Please enter the 4 digit book ID: "))
@@ -90,52 +86,64 @@ while choice != 0:
             sAuthorLast.append(aLname)
             sPublisher.append(bPublisher)
             print("Entry stored.")
-            printMenu()
-            choice = int(input("Enter a menu option number: "))
-        else:
-            printMenu()
-            choice = int(input("Enter a menu option number: "))
+        junk = input("\nPress Enter to return to the menu.")
                  
     # option3 search the list by book id or title
     elif choice == 3:
-        searchType = input("Enter 1 to search by ID, 2 to search by title, 3 to return to main menu: ")
-        results = 0
-        if searchType == "1":
-            searchID = input("Please enter a book ID to search: ")
-            for x in range(len(sID)):
-                if searchID in sID[x]: 
-                    print(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
-                        str(fPrice[x]) + ", " + sPaperback[x] + ", " +
-                        str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
-                    sAuthorLast[x] + ", " + sPublisher[x])
-                    results = 1
-            if results == 0:
+        clear()
+        print("--------Find Book Entry--------\n")
+        found = False
+        searchType = input("Enter the book ID or book title: ")
+        for x in range(len(sID)):
+            if (searchType == sID[x] or searchType == sTitle[x]):                 
+                print(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
+                    str(fPrice[x]) + ", " + sPaperback[x] + ", " +
+                    str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
+                sAuthorLast[x] + ", " + sPublisher[x])
+                found = True
+            else:                
                 print("Book not found.")
-        elif searchType == "2":
-            searchTitle = input("Please enter a book title to search: ")
-            for x in range(len(sTitle)):
-                if searchTitle in sTitle[x]:
-                    print(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
-                      str(fPrice[x]) + ", " + sPaperback[x] + ", " +
-                     str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
-                    sAuthorLast[x] + ", " + sPublisher[x])                    
-                    results = 1
-            if results == 0:
-                print("Book not found.")
-                    
-        elif searchType == "3":
-            printMenu()
-            choice = int(input("Enter a menu option number: "))
-                    
-        else:
-            print(searchType + "is an invalid entry.\n") 
+        junk = input("\nPress Enter to return to the menu.")        
+    
                     
     # option4 delete a book in entirety( search for book and delete line)
-    elif choice == 4:
-        print("delete book")
+    elif choice == 4: 
+        clear()
+        print("------Delete Book Entry------\n")
+        found = False
+        searchID = input("Please enter the book ID or book title you would like to delete: ")
+        x = len(sID) - 1 #starts at the end of the list using final index number
+        while (x >= 0): #we delete from ending to beginning to avoid invalid indexes
+            if (searchID == sID[x] or searchID == sTitle[x]):
+                found = True
+                print(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
+                    str(fPrice[x]) + ", " + sPaperback[x] + ", " +
+                    str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
+                    sAuthorLast[x] + ", " + sPublisher[x])
+                decision = input("Would you like to delete this book? (Y/N): ")
+                if (decision.upper() == "Y"):
+                    del sID[x]
+                    del sTitle[x]
+                    del sGenre[x]
+                    del fPrice[x]
+                    del sPaperback[x]
+                    del iOnHand[x]
+                    del sAuthorFirst[x]
+                    del sAuthorLast[x]
+                    del sPublisher[x] 
+            x -= 1 #causes the search to go backwards till it exits the loop  
+        if (found == True):
+            print("Book deleted.")
+        else:
+            print("Book not found.")
+        junk = input("\nPress Enter to return to the menu.")    
     # option5 write the complete list to output.txt
-    elif choice == 5:
-        print("save to file")
+
+     
+    # option6 exit program
+    elif choice == 0:
+        print("Exiting program...")
+        go = "N"
 
 
 
