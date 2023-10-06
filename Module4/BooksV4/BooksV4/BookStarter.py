@@ -56,7 +56,11 @@ while (go.upper() == "Y"):
     elif choice == 2:
         clear()
         print("--------Add Book Entry--------\n")
-        bID = int(input("Please enter the 4 digit book ID: "))
+        bID = int(input("Please enter the 4 digit book ID: ")) 
+        while h.isValidID(bID) == False:                   
+            if h.isValidID(bID) == False:
+                print("Invalid ID entry.")
+                bID = int(input("Please enter the 4 digit book ID: "))
         bTitle = input("Please enter the book title: ")
         bGenre = input("FIC = fiction, PSY = Psychology, SFI = SciFi, MYS = Mystery, HOR = Horror\nCMP = Computers, ART = Art, PHI = Philosophy, POE = Poetry, TRA = Travel\nPlease enter the book genre 3 letter code: ")
         bPrice = float(input("Please enter the book price: $"))

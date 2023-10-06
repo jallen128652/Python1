@@ -3,6 +3,9 @@
 # Program Name: helper
 # Description: This program is a module that maintains fx's for use in other programs
 
+import os
+
+clear = lambda: os.system('cls')
 # menu fx
 def printMenu():
     clear()
@@ -13,3 +16,10 @@ def printMenu():
     print("4. Delete Book Entry")
     print("5. Write Book List to File")    
     print("0. Quit")
+
+def isValidID(bID):
+    num1 = len(str(abs(bID)))
+    if num1 == 4:
+        return True
+    else:
+        return False
