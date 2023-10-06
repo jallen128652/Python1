@@ -18,7 +18,7 @@ def printMenu():
     print("0. Quit")
 
 def isValidID(bID):
-    num1 = len(str(abs(bID)))
+    num1 = len(bID)
     if num1 == 4:
         return True
     else:
