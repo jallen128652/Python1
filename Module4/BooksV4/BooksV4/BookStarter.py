@@ -128,7 +128,7 @@ while choice != 0:
             choice = int(input("Enter a menu option number: "))
                     
         else:
-            print(str(searchType) + "is an invalid entry.\n") 
+            print(searchType + "is an invalid entry.\n") 
                     
     # option4 delete a book in entirety( search for book and delete line)
     elif choice == 4:
@@ -136,7 +136,6 @@ while choice != 0:
     # option5 write the complete list to output.txt
     elif choice == 5:
         print("save to file")
-    # option6 quit (need a loop)
 
 
 
