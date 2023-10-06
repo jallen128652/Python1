@@ -9,12 +9,9 @@
 
 import os
 
-import helper as h
+import Helper as h
 
 clear = lambda: os.system('cls')
-
-#prompt user for menu option
-
 
 sID = []
 sTitle = []
@@ -43,7 +40,7 @@ file1.close()
 go = "Y" #sentinal val
 
 while (go.upper() == "Y"):
-    printMenu()
+    h.printMenu()
     choice = int(input("Enter a menu option number: "))
     # option1 iterate through list with one book per line
     if choice == 1: 
