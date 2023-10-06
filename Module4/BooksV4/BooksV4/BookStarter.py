@@ -98,9 +98,9 @@ while choice != 0:
                  
     # option3 search the list by book id or title
     elif choice == 3:
-        searchType = int(input("Enter 1 to search by ID, 2 to search by title, 3 to return to main menu: "))
+        searchType = input("Enter 1 to search by ID, 2 to search by title, 3 to return to main menu: ")
         results = 0
-        if searchType == 1:
+        if searchType == "1":
             searchID = input("Please enter a book ID to search: ")
             for x in range(len(sID)):
                 if searchID in sID[x]: 
@@ -108,33 +108,27 @@ while choice != 0:
                         str(fPrice[x]) + ", " + sPaperback[x] + ", " +
                         str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
                     sAuthorLast[x] + ", " + sPublisher[x])
-                    if searchID not in sID[x]: 
-                        results = 0
-                    else:
-                        results = 1
+                    results = 1
             if results == 0:
                 print("Book not found.")
-        elif searchType == 2:
+        elif searchType == "2":
             searchTitle = input("Please enter a book title to search: ")
             for x in range(len(sTitle)):
                 if searchTitle in sTitle[x]:
                     print(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
                       str(fPrice[x]) + ", " + sPaperback[x] + ", " +
                      str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
-                    sAuthorLast[x] + ", " + sPublisher[x])
-                    if searchTitle not in sTitle[x]: 
-                        results = 0
-                    else:
-                        results = 1
+                    sAuthorLast[x] + ", " + sPublisher[x])                    
+                    results = 1
             if results == 0:
                 print("Book not found.")
                     
-        elif searchType == 3:
+        elif searchType == "3":
             printMenu()
             choice = int(input("Enter a menu option number: "))
                     
         else:
-            print(searchType + "is an invalid entry.\nEnter 1 to search by ID, 2 to search by title, 3 to return to main menu: ") 
+            print(str(searchType) + "is an invalid entry.\n") 
                     
     # option4 delete a book in entirety( search for book and delete line)
     elif choice == 4:
