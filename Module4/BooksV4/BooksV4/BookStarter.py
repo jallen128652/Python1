@@ -138,8 +138,18 @@ while (go.upper() == "Y"):
             print("Book not found.")
         junk = input("\nPress Enter to return to the menu.")    
     # option5 write the complete list to output.txt
-
-     
+    elif choice == 5:
+        clear()
+        print("------Write Lists to File------\n")
+        file2 = open("output.txt", "w")
+        for x in range(len(sID)):
+            file2.write(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
+                    str(fPrice[x]) + ", " + sPaperback[x] + ", " +
+                    str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
+                    sAuthorLast[x] + ", " + sPublisher[x] + "\n")
+        print("List is stored in output.txt.")
+        file2.close()
+        junk = input("\nPress Enter to return to the menu.")
     # option6 exit program
     elif choice == 0:
         print("Exiting program...")
