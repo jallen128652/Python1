@@ -46,4 +46,60 @@ x = Employee("Tony", "Lozano")
 x.printname()
 # calls child class fx and passes vals
 print(x.calcGrossPay(40, 15.00))
+
+"""
+Overriding the __init__() Function:
+
+You can override the init, but if you only initialize new properties you will get errors
+If you have an __init__ in the child class, the parent class version is not called
+"""
+#example override
+#class Student(Person):
+#    def __init__(self, fname, lname, id):
+#        self.EmployeeID = id
         
+#s = Student("Joe", "Smith", 1001)
+#s.printname()
+# Throws an error for the printname() in the Person class because the __init__ was overridden 
+
+"""
+The super function:
+If you want to also call the parent init you can use the super function
+"""
+#example now with super()
+"""
+class Student(Person):
+    def __init__(self, fname, lname, id):
+        super().__init__(fname, lname)
+        self.EmployeeID = id
+        
+s = Student("Joe", "Smith", 1001)
+s.printname()
+print(s.EmployeeID)
+"""
+# now we get the passed in vals and fx's from the superclass
+
+"""
+List of objects:
+creating a list of objects and storing them
+"""
+#example
+class Student(Person):
+    def __init__(self, fname, lname, id):
+        super().__init__(fname, lname)
+        self.EmployeeID = id
+# create list        
+students = []
+# instantiate objects and append to list
+students.append(Student("Joe", "Smith", 1001))
+students.append(Student("Tony", "Lozano", 1002))
+#call function by object index
+students[0].printname()
+students[1].printname()
+
+"""
+Overiding Methods tip:
+You can overide any method from the parent class, and the child class method will be used You can use super if you want to run both versions
+
+You can creates classes in modules and import it into your main file to use that class
+"""
