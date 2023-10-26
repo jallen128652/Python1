@@ -88,10 +88,10 @@ while (go.upper() == "Y"):
         aLname = input("Please enter the authors last name: ")
         bPublisher = input("Please enter the publishers name: ")
         #print and validate the entry
-        print("\nYou entered: " + sID + " " + sTitle + " " + 
-              sGenre + " " + "${:,.2f}".format(fPrice) + " " + sPaperback + " " +
-              str(iOnHand) + " " + sAuthorFirst + " " + sAuthorLast + " " +
-              sPublisher)
+        print("\nYou entered: " + bID + " " + bTitle + " " + 
+              bGenre + " " + "${:,.2f}".format(bPrice) + " " + bPaperback + " " +
+              str(bOnHand) + " " + aFname + " " + aLname + " " +
+              bPublisher)
         choice2 = input("\nSave this entry? (Y/N): ")
         #store the entry
         if choice2.upper() == "Y":
@@ -105,6 +105,7 @@ while (go.upper() == "Y"):
             sAuthorLast.append(aLname)
             sPublisher.append(bPublisher)
             print("Entry stored.")
+            #creates new books obj and adds the vals from the list
             books.append(bc.BookClass(sID[-1], sTitle[-1], sGenre[-1], fPrice[-1], sPaperback[-1], iOnHand[-1], sAuthorFirst[-1], sAuthorLast[-1], sPublisher[-1]))
         junk = input("\nPress Enter to return to the menu.")
                  
