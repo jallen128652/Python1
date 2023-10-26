@@ -18,8 +18,8 @@ def printMenu():
     print("5. Write Book List to File")    
     print("0. Quit")
 #id validator fx
-def isValidID(bID):
-    num1 = len(bID)
+def isValidID(sID):
+    num1 = len(sID)
     if num1 == 4:
         return True
     else:

@@ -21,7 +21,7 @@ class BookClass:
               self.authorFname + ", " + self.authorLname + ", " + self.publisher + "\n")
     
     # Takes an integer as a parameter, and adds the number passed into the iOnHand property.
-    #def addToOnHand(self):
+    #def addToOnHand(self,):
         
     # Takes a float as a parameter and replaces the value of the fPrice property with the new value.
     #def setPrice(self):
