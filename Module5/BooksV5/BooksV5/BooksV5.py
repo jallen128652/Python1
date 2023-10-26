@@ -62,9 +62,9 @@ while (go.upper() == "Y"):
     if choice == 1: 
         #clear menu
         clear()
-        print("--------View Books Entry--------\n")
-        #call BookClass printBookInfo()
-        bc.printBookInfo()
+        #loop through books list and call printBookInfo()
+        for book in books:
+            book.printBookInfo()
         #return to menu    
         junk = input("\nPress Enter to return to the menu.")    
     # option2 take inputs and append list and file

@@ -12,7 +12,8 @@ class BookClass:
         self.publisher = sPublisher
     # prints out a comma-delimited list of the 9 properties in this instance of the object.
     def printBookInfo(self):
-        
+        print(self.id + ", " + self.title + ", " + self.genre + ", " + str(self.price) + ", " + self.paperback + ", " + str(self.onHand) + ", " + 
+              self.authorFname + ", " + self.authorLname + ", " + self.publisher)
     #  Accepts a file handle as a parameter, and writes out a comma-delimited list of the 9 properties in this instance of the object. 
     #  Write to the file handle that was passed into the function.   
     #def writeBookInfo(self):
