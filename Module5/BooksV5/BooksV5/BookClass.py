@@ -11,14 +11,14 @@ class BookClass:
         self.authorLname = sAuthorLast
         self.publisher = sPublisher
     # prints out a comma-delimited list of the 9 properties in this instance of the object.
-    def printBookInfo(self):
+    #def printBookInfo(self):
     
     #  Accepts a file handle as a parameter, and writes out a comma-delimited list of the 9 properties in this instance of the object. 
     #  Write to the file handle that was passed into the function.   
-    def writeBookInfo(self):
+    #def writeBookInfo(self):
     
     # Takes an integer as a parameter, and adds the number passed into the iOnHand property.
-    def addToOnHand(self):
+    #def addToOnHand(self):
         
     # Takes a float as a parameter and replaces the value of the fPrice property with the new value.
-    def setPrice(self):
+    #def setPrice(self):
