@@ -10,3 +10,9 @@ class BookClass:
         self.authorLname = sAuthorLast
         self.publisher = sPublisher
     def printBookInfo(self):
+        
+    def writeBookInfo(self):
+        
+    def addToOnHand(self):
+        
+    def setPrice(self):
