@@ -49,3 +49,49 @@ file1.close()
 #loop through lists and store in BookClass objects
 for x in range(len(sID)):
     books.append(bc.BookClass(sID[x], sTitle[x], sGenre[x], fPrice[x], sPaperback[x], iOnHand[x], sAuthorFirst[x], sAuthorLast[x], sPublisher[x]))
+
+#loop control val
+go = "Y" #sentinal val
+#loop until user exits
+while (go.upper() == "Y"):
+    #call menu fx from helper.py
+    h.printMenu()
+    #prompt for user input choice
+    choice = int(input("\nEnter a menu option number: "))
+    # option1 iterate through list with one book per line
+    if choice == 1: 
+        #clear menu
+        clear()
+        print("--------View Books Entry--------\n")
+        #call BookClass printBookInfo()
+        bc.printBookInfo()
+        #return to menu    
+        junk = input("\nPress Enter to return to the menu.")    
+    # option2 take inputs and append list and file
+    elif choice == 2:
+        clear()
+       
+        junk = input("\nPress Enter to return to the menu.")
+                 
+    # option3 search the list by book id or title
+    elif choice == 3:
+        clear()
+        
+        junk = input("\nPress Enter to return to the menu.")        
+    
+                    
+    # option4 delete a book in entirety( search for book and delete line)
+    elif choice == 4: 
+        clear()
+       
+        junk = input("\nPress Enter to return to the menu.")    
+    # option5 write the complete list to output.txt
+    elif choice == 5:
+        clear()
+        
+        junk = input("\nPress Enter to return to the menu.")
+    # option6 exit program
+    elif choice == 0:
+        print("\nExiting program...")
+        #update setinal value
+        go = "N"
