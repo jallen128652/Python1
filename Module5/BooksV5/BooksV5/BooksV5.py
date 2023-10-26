@@ -62,20 +62,23 @@ while (go.upper() == "Y"):
     if choice == 1: 
         #clear menu
         clear()
+        print("--------View Books Entry--------\n")
         #loop through books list and call printBookInfo()
-        for book in books:
-            book.printBookInfo()
+        for x in books:
+            x.printBookInfo()
         #return to menu    
         junk = input("\nPress Enter to return to the menu.")    
     # option2 take inputs and append list and file
     elif choice == 2:
         clear()
+        print("--------Add Book Entry--------\n")
        
         junk = input("\nPress Enter to return to the menu.")
                  
     # option3 search the list by book id or title
     elif choice == 3:
         clear()
+        print("--------Find Book Entry--------\n")
         
         junk = input("\nPress Enter to return to the menu.")        
     
@@ -83,12 +86,20 @@ while (go.upper() == "Y"):
     # option4 delete a book in entirety( search for book and delete line)
     elif choice == 4: 
         clear()
+        print("------Delete Book Entry------\n")
        
         junk = input("\nPress Enter to return to the menu.")    
     # option5 write the complete list to output.txt
     elif choice == 5:
         clear()
-        
+        print("------Write Book List to File------\n")
+        #create a writeable file
+        file2 = open("output.txt", "w")
+        #loop through books list and calls BookClass fx
+        for x in books:
+            x.writeBookInfo(file2)
+        print("\nList is stored in output.txt.")
+        file2.close()
         junk = input("\nPress Enter to return to the menu.")
     # option6 exit program
     elif choice == 0:
