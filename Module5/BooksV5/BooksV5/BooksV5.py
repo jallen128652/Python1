@@ -72,10 +72,10 @@ while (go.upper() == "Y"):
         print("--------Add Book Entry--------\n")
         sID = str(input("Please enter the 4 digit book ID: ")) 
         #call fx in helper.py to validate the book id and loop till correct
-        while h.isValidID(bID) == False:                   
-            if h.isValidID(bID) == False:
+        while h.isValidID(sID) == False:                   
+            if h.isValidID(sID) == False:
                 print("Invalid ID entry.")
-                bID = str(input("Please enter the 4 digit book ID: "))
+                sID = str(input("Please enter the 4 digit book ID: "))
         #recieve the rest of the inputs and store to vars        
         sTitle = input("Please enter the book title: ")
         sGenre = input("FIC = fiction, PSY = Psychology, SFI = SciFi, MYS = Mystery, HOR = Horror\nCMP = Computers, ART = Art, PHI = Philosophy, POE = Poetry, TRA = Travel\nPlease enter the book genre 3 letter code: ")
@@ -107,12 +107,9 @@ while (go.upper() == "Y"):
         #loop through lists
         for x in books:
             #search by id and title
-            if (searchType == sID or searchType == sTitle):  
+            if (searchType == x.id or searchType == x.title):  
                 #print results
-                print(sID + ", " + sTitle + ", " + sGenre + ", " +
-                    str(fPrice) + ", " + sPaperback + ", " +
-                    str(iOnHand) + ", " + sAuthorFirst + ", " +
-                sAuthorLast + ", " + sPublisher)
+                x.printBookInfo()
                 found = True
         if found == False:            
             print("\nBook not found.")
@@ -125,35 +122,24 @@ while (go.upper() == "Y"):
         print("------Delete Book Entry------\n")
         found = False
         #prompt user to search for book to delete
-        searchID = input("\nPlease enter the book ID or book title you would like to delete: ")
-        x = len(sID) - 1 #starts at the end of the list using final index number
+        searchType = input("\nPlease enter the book ID or book title you would like to delete: ")
+        x = len(books) - 1 #starts at the end of the list using final index number
         #loop through id and title list searching for the input
         while (x >= 0): #we delete from ending to beginning to avoid invalid indexes
-            if (searchID == sID[x] or searchID == sTitle[x]):
+            if (searchType == books[x].id or searchType == books[x].title):
                 found = True
                 #print and validate choice if found
-                print(str(sID[x]) + ", " + sTitle[x] + ", " + sGenre[x] + ", " +
-                    str(fPrice[x]) + ", " + sPaperback[x] + ", " +
-                    str(iOnHand[x]) + ", " + sAuthorFirst[x] + ", " +
-                    sAuthorLast[x] + ", " + sPublisher[x])
+                books[x].printBookInfo()
                 decision = input("Would you like to delete this book? (Y/N): ")
                 #delete entry line
                 if (decision.upper() == "Y"):
-                    #deletes items from the lists
-                    del sID[x]
-                    del sTitle[x]
-                    del sGenre[x]
-                    del fPrice[x]
-                    del sPaperback[x]
-                    del iOnHand[x]
-                    del sAuthorFirst[x]
-                    del sAuthorLast[x]
-                    del sPublisher[x] 
                     #deletes the object they were stored in
                     del books[x]
             x -= 1 #causes the search to go backwards till it exits the loop  
         if (found == True):
             print("\nBook deleted.")
+        else:
+            print("\nBook not found.")
         junk = input("\nPress Enter to return to the menu.")    
     # option5 write the complete list to output.txt
     elif choice == 5:
