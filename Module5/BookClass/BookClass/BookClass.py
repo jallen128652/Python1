@@ -32,7 +32,7 @@ class BookClass:
         print(fPrice)
         
 #test the books class
-#x = BookClass("1234", "JJ's", "FIC", 22.99, "Y", 5, "John", "Smith", "Pubbies")
-#x.printBookInfo()
-#x.addToOnHand(3)
-#x.setPrice(22.99)
+x = BookClass("1234", "JJ's", "FIC", 22.99, "Y", 5, "John", "Smith", "Pubbies")
+x.printBookInfo()
+x.addToOnHand(3)
+x.setPrice(22.99)
