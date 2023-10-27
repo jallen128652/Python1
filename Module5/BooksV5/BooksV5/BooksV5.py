@@ -15,7 +15,7 @@ clear = lambda: os.system('cls')
 #create list for objects
 books = []
 
-#create lists for items
+#create vars for items
 sID = ""
 sTitle = ""
 sGenre = ""
@@ -43,8 +43,9 @@ for sLine in file1:
     sAuthorFirst = record[6].strip()
     sAuthorLast = record[7].strip()
     sPublisher = record[8].strip()
+    #instantiate BookClass obj's and add line of values to obj's, store in books list
     books.append(bc.BookClass(sID, sTitle, sGenre, fPrice, sPaperback, iOnHand, sAuthorFirst, sAuthorLast, sPublisher))
-#close file    
+#close file   
 file1.close()    
 
 
@@ -95,6 +96,8 @@ while (go.upper() == "Y"):
         if choice2.upper() == "Y":
             books.append(bc.BookClass(sID, sTitle, sGenre, fPrice, sPaperback, iOnHand, sAuthorFirst, sAuthorLast, sPublisher))
             print("Entry stored.")
+        else:
+            print("Entry discarded.")
         junk = input("\nPress Enter to return to the menu.")
                  
     # option3 search the list by book id or title
@@ -136,8 +139,10 @@ while (go.upper() == "Y"):
                     #deletes the object they were stored in
                     del books[x]
             x -= 1 #causes the search to go backwards till it exits the loop  
-        if (found == True):
+        if (found == True and decision.upper() == "Y"):
             print("\nBook deleted.")
+        elif (found == True and decision.upper() == "N"):
+            print("\nBook not deleted.")
         else:
             print("\nBook not found.")
         junk = input("\nPress Enter to return to the menu.")    

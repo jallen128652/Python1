@@ -1,7 +1,13 @@
+# Author: James Allen 
+# Course: ITSE 1373 7P1
+# Program Name: BookClass
+# Description: This program is a class that holds attributes and functions for the BooksV5.py program to utilize or any python program.
+# Note: Remember to save often and commit to git once tested
+
 class BookClass:
-    # default parameter value
+    # default parameter value for price so it can be changed
     fPrice = 0.0 
-    # Accepts 9 parameters corresponding to the properties listed above,  and assigns them to the 9 internal properties.
+    # Accepts 9 parameters corresponding to the properties listed above, and assigns them to the 9 internal properties.
     def __init__(self, sID, sTitle, sGenre, fPrice, sPaperback, iOnHand, sAuthorFirst, sAuthorLast, sPublisher):
         self.id = sID
         self.title = sTitle
