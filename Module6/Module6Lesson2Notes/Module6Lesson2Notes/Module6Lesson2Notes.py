@@ -187,6 +187,17 @@ The split function returns a list split at the matches
 import re
 # splits at the ", "
 names = "Susie, Cindy, Sarah, Vicky"
-             #",\s", searches for , and a space to split at
+             #",\s" searches for , and a space to split at
 s = re.split(",\s", names)
 print(s) #prints: ['Susie', 'Cindy', 'Sarah', 'Vicky']
+
+"""
+The sub function:
+A sub is a replacesment, replaces each match with your text
+"""
+import re
+
+names = "Susie, Cindy, Sarah, Vicky"
+# sub will replace the ", " with a newline, note the 2 args
+s = re.sub(",\s", "\n", names)
+print(s) # prints the list of names vertically or each after a newline
