@@ -4,6 +4,7 @@ Complete Program
 - A common thing programmers do is update data
 - In this program we will be using regex to update incorrect data files
 """
+# note we don't have the inventory.txt to validate this progrm :(
 import re
 
 file = open("inventory.txt")
