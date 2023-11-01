@@ -113,3 +113,11 @@ and z, lower case OR upper case
 [+] In sets, +, *, ., |, (), $,{} has no special meaning, so [+] 
 means: return a match for any + character in the string
 """
+
+"""
+Regex Functions:
+- Findall
+- Search
+- Split 
+- Sub
+"""
