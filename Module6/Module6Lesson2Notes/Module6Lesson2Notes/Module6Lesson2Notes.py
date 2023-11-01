@@ -143,7 +143,7 @@ else:
     print("Not Found")    
     
 """
-Search
+search():
 Search returns a match object if a a match is found and None if it 
 isnt
 """
@@ -153,3 +153,40 @@ print(x) # prints: <re.Match object; span=(0, 23), match='ID1008, John Doe, Texa
 
 x = re.search("Texas", txt)
 print(x) # prints: <re.Match object; span=(18, 23), match='Texas'>
+
+"""
+Match Object
+.span() returns a tuple containing the start-,
+and end positions of the match.
+.string returns the string passed into the
+function
+.group() returns the part of the string where
+there was a match
+"""
+#example   r = raw text \b = matches chars at the begginning or the end 
+#\w = Returns a match where the string contains any word characters 
+# + = one or more occurrances(it's combined with \w)
+x = re.search(r"\bID\w+", txt)
+print(x.group())
+
+"""
+The findall() Function:
+Returns a list of matches, or an empty list if there are no matches
+"""
+
+import re
+
+names = "Susie, Cindy, Sarah, Vicky"
+s = re.findall(r"\bS\w+", names)
+print(s) #prints: ['Susie', 'Sarah'] a list
+
+"""
+The split() Function:
+The split function returns a list split at the matches
+"""
+import re
+# splits at the ", "
+names = "Susie, Cindy, Sarah, Vicky"
+             #",\s", searches for , and a space to split at
+s = re.split(",\s", names)
+print(s) #prints: ['Susie', 'Cindy', 'Sarah', 'Vicky']
