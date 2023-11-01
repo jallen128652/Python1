@@ -6,7 +6,7 @@ RegEx can be used to check if a string contains the specified search pattern.
 You need the re module to use regular expressions
 import re
 """
-import re
+#import re
 
 """
 Python Regular Expressions
@@ -44,12 +44,12 @@ https://learnbyexample.github.io/python-regex-cheatsheet/
 https://www.pythontutorial.net/python-regex/python-regex-cheat-sheet/
 """
 #example
-txt = "ID1008, John Doe, Texas"
+#txt = "ID1008, John Doe, Texas"
 #	^ = begins with . = any characters * = zero or more occurances
 # $ = ends with
 #note the . with the * means you can have zero or more occurrences 
 #of any character
-x = re.search("^ID.*Texas$", txt)
+#x = re.search("^ID.*Texas$", txt)
 
 """
 Special Sequences:
@@ -121,3 +121,35 @@ Regex Functions:
 - Split 
 - Sub
 """
+#Search
+#Search searches for a string with or without metacharacters
+
+#import RegEx class
+import re
+
+#string text
+txt = "ID1008, John Doe, Texas" 
+
+#obj x = regEx search fx()
+#x = re.search("Florida", txt)
+#if x == None:
+#    print("Not Found")    
+    
+x = re.search("Texas", txt)
+if x != None:
+    #start fx returns the position that Texas starts at in the string    
+    print(x.start())
+else:
+    print("Not Found")    
+    
+"""
+Search
+Search returns a match object if a a match is found and None if it 
+isnt
+"""
+txt = "ID1008, John Doe, Texas" 
+x = re.search("^ID.*Texas$", txt)
+print(x) # prints: <re.Match object; span=(0, 23), match='ID1008, John Doe, Texas'>
+
+x = re.search("Texas", txt)
+print(x) # prints: <re.Match object; span=(18, 23), match='Texas'>
