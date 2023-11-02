@@ -147,7 +147,7 @@ else:
 ##text = "@go.net"  #not valid
 ##text = "a@a.a"    #not valid
 
-x = re.search(r"^[.+^@]\B@?[.com]\b|[.edu]\b|[.net]\b", text)
+x = re.search(r"^(.+[^@])\B@?([.com]\b|[.edu]\b|[.net]\b)", text)
 #never figured it out after trying a bunch of variations
 if x == None:
     print("Problem 10 No Match")
