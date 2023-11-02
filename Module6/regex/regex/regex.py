@@ -1,3 +1,10 @@
+# Author: James Allen 
+# Course: ITSE 1373 7P1
+# Program Name: regex.py
+# Description: This program tests out regEx to ensure understanding
+# Note: Remember to save often and commit to git once tested
+
+
 import re
 
 
