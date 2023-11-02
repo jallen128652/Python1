@@ -8,6 +8,7 @@
 import os
 import BookClass as bc
 import Helper as h
+import re
 
 #clear fx
 clear = lambda: os.system('cls')
@@ -109,8 +110,8 @@ while (go.upper() == "Y"):
         searchType = input("Enter the book ID or book title: ")
         #loop through lists
         for x in books:
-            #search by id and title
-            if (searchType == x.id or searchType == x.title):  
+            #search by id and partial title
+            if searchType == x.id or re.search(searchType, x.title):  
                 #print results
                 x.printBookInfo()
                 found = True
@@ -127,25 +128,34 @@ while (go.upper() == "Y"):
         #prompt user to search for book to delete
         searchType = input("\nPlease enter the book ID or book title you would like to delete: ")
         x = len(books) - 1 #starts at the end of the list using final index number
-        #loop through id and title list searching for the input
-        while (x >= 0): #we delete from ending to beginning to avoid invalid indexes
-            if (searchType == books[x].id or searchType == books[x].title):
-                found = True
-                #print and validate choice if found
-                books[x].printBookInfo()
-                decision = input("Would you like to delete this book? (Y/N): ")
-                #delete entry line
-                if (decision.upper() == "Y"):
-                    #deletes the object they were stored in
-                    del books[x]
-            x -= 1 #causes the search to go backwards till it exits the loop  
-        if (found == True and decision.upper() == "Y"):
-            print("\nBook deleted.")
-        elif (found == True and decision.upper() == "N"):
-            print("\nBook not deleted.")
-        else:
-            print("\nBook not found.")
-        junk = input("\nPress Enter to return to the menu.")    
+        #x = -1 #test for the exception and exit
+        #throws an exception if the loop control calc is out of range
+        try:
+            if x < 0:
+                raise ValueError("Book search out of range, exiting program.")        
+            #loop through id and title list searching for the input
+            while (x >= 0): #we delete from ending to beginning to avoid invalid indexes
+                #search by id and partial title
+                if searchType == books[x].id or re.search(searchType, books[x].title):
+                    found = True
+                    #print and validate choice if found
+                    books[x].printBookInfo()
+                    decision = input("Would you like to delete this book? (Y/N): ")
+                    #delete entry line
+                    if (decision.upper() == "Y"):
+                        #deletes the object they were stored in
+                        del books[x]
+                x -= 1 #causes the search to go backwards till it exits the loop  
+            if (found == True and decision.upper() == "Y"):
+                print("\nBook deleted.")
+            elif (found == True and decision.upper() == "N"):
+                print("\nBook not deleted.")
+            else:
+                print("\nBook not found.")
+            junk = input("\nPress Enter to return to the menu.") 
+        except ValueError:
+            print("Book search out of range, exiting program.")
+            quit()
     # option5 write the complete list to output.txt
     elif choice == 5:
         clear()
