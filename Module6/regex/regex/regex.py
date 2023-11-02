@@ -212,3 +212,4 @@ textVar = "1001, Beloved, FIC, 12.95, Y, 5, Toni, Morrison, Plume"
 s = re.findall(r"\d+[.]?\d*", textVar)
 
 print(s)
+
