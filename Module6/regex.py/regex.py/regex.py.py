@@ -1,5 +1,3 @@
-
-
 import re
 
 
@@ -8,7 +6,7 @@ import re
 # When running, use the input to test your solution
 #  You can if you wish comment out completed problems to simplify testing
 text = input("Enter text to test the individual problem you are testing: ")
-text = input("ID1008, John Doe, Texas")
+
 
 
 
@@ -17,7 +15,7 @@ text = input("ID1008, John Doe, Texas")
 #  In the quotes write the regular expression that matches the letters
 #  "Tex" (no quotes) anywhere in the string.
 
-x = re.search("Texas", text)
+x = re.search("Tex", text)
 
 if x == None:
     print("No Tex Anywhere Match!")
@@ -30,7 +28,7 @@ else:
 #  In the quotes write the regular expression that matches the letters
 #  "Tex" (no quotes) at the beginning of the string.
 
-x = re.search("Change Me", text)
+x = re.search("^Tex", text)
 
 if x == None:
     print("No Tex Beginning Match!")
@@ -42,7 +40,7 @@ else:
 #  In the quotes write the regular expression that matches the words
 #  "hello" or "hero" but not "hobo" (no quotes)
 
-x = re.search("Change Me", text)
+x = re.search("hello|hero", text)
 
 if x == None:
     print("Problem 3 No Match")
@@ -54,7 +52,7 @@ else:
 #  In the quotes write the regular expression that matches the words
 #  "grand" or "grind" but not "ground" (no quotes)
 
-x = re.search("Change Me", text)
+x = re.search("grand|grind", text)
 
 if x == None:
     print("Problem 4 No Match")
@@ -67,7 +65,7 @@ else:
 #  In the quotes write the regular expression that matches the words
 #  "Good Day" or "Good Night" but not "Good Afternoon" (no quotes)
 
-x = re.search("Change Me", text)
+x = re.search("^Good\sDay$|Night$", text)
 
 if x == None:
     print("Problem 5 No Match")
@@ -80,7 +78,7 @@ else:
 #  In the quotes write the regular expression that matches the string
 #  of a number between 100 and 299
 
-x = re.search("Change Me", text)
+x = re.search("[1-2][0-9][0-9]", text)
 
 if x == None:
     print("Problem 6 No Match")
@@ -95,7 +93,7 @@ else:
 #  word with q not followed by u.  "quest" would not match but
 #  qat would match
 
-x = re.search("Change Me", text)
+x = re.search("[q][^u]", text)
 
 if x == None:
     print("Problem 7 No Match")
@@ -109,7 +107,7 @@ else:
 #  In the quotes write the regular expression that matches any social security
 #  number.  Exactly 11 characters in the form 999-99-9999
 
-x = re.search("Change Me", text)
+x = re.search("[0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9][0-9][0-9]", text)
 
 if x == None:
     print("Problem 8 No Match")
@@ -122,7 +120,7 @@ else:
 #  In the quotes write the regular expression that has a dollar
 #  sign $ anywhere in the string
 
-x = re.search("Change Me", text)
+x = re.search("[$]", text)
 
 if x == None:
     print("Problem 9 No Match")
@@ -142,8 +140,8 @@ else:
 ##text = "@go.net"  #not valid
 ##text = "a@a.a"    #not valid
 
-x = re.search("Change Me", text)
-
+#x = re.search(r"^.+\B@?[.com]\b|[.edu]\b|[.net]\b", text)
+#never figured it out after trying a bunch of variations
 if x == None:
     print("Problem 10 No Match")
 else:
@@ -159,7 +157,7 @@ else:
 
 textVar = "Bill, Amy, Jim, Andy, Susan, Manny, Alex"
 
-s = re.findall(r"Change Me", textVar)
+s = re.findall(r"\bA\w+", textVar)
 
 print(s)
 
@@ -172,7 +170,7 @@ print(s)
 
 textVar = "Bill, Amy, Jim, Andy, Susan, Manny, Alex"
 
-s = re.sub("Change Me", "Change Me", textVar)
+s = re.sub(",\s", " | ", textVar)
 
 print(s)
 
@@ -184,7 +182,7 @@ print(s)
 
 textVar = "Bill, Amy, Jim, Andy, Susan, Manny, Alex"
 
-s = re.findall("Change Me", textVar)
+s = re.findall("\w{4,5}", textVar)
 
 print(s)
 
@@ -198,7 +196,7 @@ print(s)
 
 textVar = "Bill@sales.acme.com, Amy@hr.acme.com, Jim@rd.acme.com"
 
-s = re.sub("Change Me", "Change Me", textVar)
+s = re.sub("sales.a|hr.a|rd.a", "a", textVar)
 
 print(s)
 
@@ -211,10 +209,6 @@ print(s)
 
 textVar = "1001, Beloved, FIC, 12.95, Y, 5, Toni, Morrison, Plume"
 
-s = re.findall(r"Change Me", textVar)
+s = re.findall(r"\d+[.]?\d*", textVar)
 
 print(s)
-
-
-
-
