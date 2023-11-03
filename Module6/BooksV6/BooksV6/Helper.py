@@ -1,7 +1,8 @@
 # Author: James Allen 
 # Course: ITSE 1373 7P1
 # Program Name: helper
-# Description: This program is a module that maintains fx's for use in other programs
+# Description: This program is a module that maintains fx's for use in
+#  other programs and conducts error handling in case of duplicates
 
 #imports
 import os
