@@ -128,7 +128,7 @@ while (go.upper() == "Y"):
         #prompt user to search for book to delete
         searchType = input("\nPlease enter the book ID or book title you would like to delete: ")
         x = len(books) - 1 #starts at the end of the list using final index number
-        #x = -1 #test for the exception and exit uncomment to use
+        #x = -1 #test for the exception and exit, uncomment to use
         #throws an exception if the loop control calc is out of range
         try:
             if x < 0:
