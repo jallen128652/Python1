@@ -30,6 +30,7 @@ class BookClass:
             file2.write(self.id + ", " + self.title + ", " + self.genre + ", " + str(self.price) + ", " + self.paperback + ", " + str(self.onHand) + ", " + 
               self.authorFname + ", " + self.authorLname + ", " + self.publisher + "\n")
         except:
+            # it's gonna print this as many times as there is lines in book.txt
             print("Failed to write to the file.")
     # Takes an integer as a parameter, and adds the number passed into the iOnHand property.
     def addToOnHand(self, iOnHand):
