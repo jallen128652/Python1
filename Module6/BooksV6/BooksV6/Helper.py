@@ -18,9 +18,20 @@ def printMenu():
     print("5. Write Book List to File")    
     print("0. Quit")
 #id validator fx
-def isValidID(sID):
+def isValidID(sID):    
     num1 = len(sID)
-    if num1 == 4:
-        return True
+    if num1 == 4:   
+        #check book ID for duplicates and raise an error
+        with open("book.txt", "r") as file:
+            for line in file:
+                if sID in line.strip().split(","):
+                    raise ValueError("Duplicate ID found.")
+        return True        
     else:
         return False
+    
+    
+
+
+    
+

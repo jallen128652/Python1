@@ -25,9 +25,12 @@ class BookClass:
     #  Accepts a file handle as a parameter, and writes out a comma-delimited list of the 9 properties in this instance of the object. 
     #  Write to the file handle that was passed into the function.   
     def writeBookInfo(self, file2):
-        file2.write(self.id + ", " + self.title + ", " + self.genre + ", " + str(self.price) + ", " + self.paperback + ", " + str(self.onHand) + ", " + 
+        #change file2 to file3 to induce error and test the error handling
+        try:
+            file2.write(self.id + ", " + self.title + ", " + self.genre + ", " + str(self.price) + ", " + self.paperback + ", " + str(self.onHand) + ", " + 
               self.authorFname + ", " + self.authorLname + ", " + self.publisher + "\n")
-    
+        except:
+            print("Failed to write to the file.")
     # Takes an integer as a parameter, and adds the number passed into the iOnHand property.
     def addToOnHand(self, iOnHand):
         self.onHand = iOnHand
