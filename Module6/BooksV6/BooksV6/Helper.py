@@ -10,13 +10,19 @@ clear = lambda: os.system('cls')
 # menu fx
 def printMenu():
     clear()
-    print("-------- Menu --------\n")
-    print("1. View Books Entry")
-    print("2. Add Book Entry")
-    print("3. Find Book Entry")
-    print("4. Delete Book Entry")
-    print("5. Write Book List to File")    
-    print("0. Quit")
+    #*****6th error handling routine.******
+    try:
+        print("-------- Menu --------\n")
+        print("1. View Books Entry")
+        print("2. Add Book Entry")
+        print("3. Find Book Entry")
+        print("4. Delete Book Entry")
+        print("5. Write Book List to File")    
+        print("0. Quit")
+    except:
+        print("Menu failed to print.")
+    else:
+        print("\n Menu successfully printed\n Ready for your selection.")
 #id validator fx
 def isValidID(sID):    
     num1 = len(sID)
