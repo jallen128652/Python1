@@ -1,7 +1,10 @@
 # Author: James Allen 
 # Course: ITSE 1373 7P1
 # Program Name: BooksV6
-# Description: This program manipulates the book.txt file and prints
+# Description: This program manipulates the book.txt file, stores a list
+# of obj's, prints, adds new entries, outputs to files and conducts error
+# handling.
+
 # Note: Remember to save often and commit to git once tested
 
 #import modules
