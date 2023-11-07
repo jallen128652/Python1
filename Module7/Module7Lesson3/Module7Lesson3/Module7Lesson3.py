@@ -120,6 +120,165 @@ showwarning(title, message)
 
 """
 Complete Examples:
-Temperature Converter
-Text Editor
 """
+#text copier video example
+import tkinter as tk
+
+#fx to call
+def copytext():
+	entryvar2.set(entryvar1.get())
+	return
+
+#create window
+window = tk.Tk()
+window.title("Set text")
+
+#config window dimensions
+window.rowconfigure(0, minsize=50, weight=1)
+window.columnconfigure(1, minsize=50, weight=1)
+
+#create buttons frame on first column
+frm_buttons = tk.Frame(window, relief=tk.RAISED, bd=2)
+btn_cpy = tk.Button(frm_buttons, text="Copy", command=copytext)
+btn_cpy.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
+frm_buttons.grid(row=0, column=0, sticky="ns")
+
+#create data frame form on second window column 
+frm_data = tk.Frame(window, relief=tk.RAISED, bd=2)
+frm_data.grid(row=0, column=1, sticky="ns")
+
+#Labels and entries
+label1 = tk.Label(frm_data, text='Enter Text:')
+label1.grid(column=0, row=0)
+entryvar1 = tk.StringVar()
+entry1 = tk.Entry(frm_data, textvariable=entryvar1)
+entry1.grid(column=1, row=0)
+entry1.focus()
+
+label2 = tk.Label(frm_data, text='Copied text:')
+label2.grid(column=0, row=1)
+entryvar2 = tk.StringVar()
+entry2 = tk.Entry(frm_data, textvariable=entryvar2)
+entry2.grid(column=1, row=1)
+
+#event handler and listener fx from Tkinter
+window.mainloop()
+
+#****************************************************************8
+#additional examples
+
+import tkinter as tk
+from tkinter import ttk
+from tkinter.messagebox import showerror
+
+# root window
+root = tk.Tk()
+root.title('temperature converter')
+root.geometry('300x70')
+root.resizable(0, 0)
+
+
+def fahrenheit_to_celsius(f):
+   """ convert fahrenheit to celsius
+   """
+   return (f - 32) * 5/9
+
+
+# frame
+frame = ttk.Frame(root)
+
+
+# field options
+options = {'padx': 5, 'pady': 5}
+
+# temperature label
+temperature_label = ttk.Label(frame, text='fahrenheit')
+temperature_label.grid(column=0, row=0, sticky='w', **options)
+
+# temperature entry
+temperature = tk.StringVar()
+temperature_entry = ttk.Entry(frame, textvariable=temperature)
+temperature_entry.grid(column=1, row=0, **options)
+temperature_entry.focus()
+
+# convert button
+
+
+def convert_button_clicked():
+   """  handle convert button click event 
+   """
+   try:
+       f = float(temperature.get())
+       c = fahrenheit_to_celsius(f)
+       result = f'{f} fahrenheit = {c:.2f} celsius'
+       result_label.config(text=result)
+   except ValueError as error:
+       showerror(title='error', message=error)
+
+
+convert_button = ttk.Button(frame, text='convert')
+convert_button.grid(column=2, row=0, sticky='w', **options)
+convert_button.configure(command=convert_button_clicked)
+
+# result label
+result_label = ttk.Label(frame)
+result_label.grid(row=1, columnspan=3, **options)
+
+# add padding to the frame and show it
+frame.grid(padx=10, pady=10)
+
+
+# start the app
+root.mainloop()
+
+#*************************************************************
+
+
+
+import tkinter as tk
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+
+def open_file():
+   """open a file for editing."""
+   filepath = askopenfilename(
+       filetypes=[("text files", "*.txt"), ("all files", "*.*")]
+   )
+   if not filepath:
+       return
+   txt_edit.delete("1.0", tk.END)
+   with open(filepath, mode="r", encoding="utf-8") as input_file:
+       text = input_file.read()
+       txt_edit.insert(tk.END, text)
+   window.title(f"simple text editor - {filepath}")
+
+def save_file():
+   """save the current file as a new file."""
+   filepath = asksaveasfilename(
+       defaultextension=".txt",
+       filetypes=[("text files", "*.txt"), ("all files", "*.*")],
+   )
+   if not filepath:
+       return
+   with open(filepath, mode="w", encoding="utf-8") as output_file:
+       text = txt_edit.get("1.0", tk.END)
+       output_file.write(text)
+   window.title(f"simple text editor - {filepath}")
+
+window = tk.Tk()
+window.title("simple text editor")
+
+window.rowconfigure(0, minsize=800, weight=1)
+window.columnconfigure(1, minsize=800, weight=1)
+
+txt_edit = tk.Text(window)
+frm_buttons = tk.Frame(window, relief=tk.RAISED, bd=2)
+btn_open = tk.Button(frm_buttons, text="open", command=open_file)
+btn_save = tk.Button(frm_buttons, text="save as...", command=save_file)
+
+btn_open.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
+btn_save.grid(row=1, column=0, sticky="ew", padx=5)
+
+frm_buttons.grid(row=0, column=0, sticky="ns")
+txt_edit.grid(row=0, column=1, sticky="nsew")
+
+window.mainloop()
