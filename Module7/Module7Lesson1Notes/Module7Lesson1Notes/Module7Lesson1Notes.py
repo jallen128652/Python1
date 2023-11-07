@@ -63,7 +63,7 @@ Command Binding:
 (not available on all widgets)
 """
 #example1
-"""
+
 import tkinter as tk
 from tkinter import ttk # allows the use of newer themed widgets
 root = tk.Tk()
@@ -73,7 +73,7 @@ def button_clicked():
 button = ttk.Button(root, text='Click Me', command=button_clicked)
 button.pack() #using pack geometry manager
 root.mainloop()
-"""
+
 #example2
 import tkinter as tk
 from tkinter import ttk
@@ -93,4 +93,42 @@ def select(option):
 ttk.Button(root, text='Rock', command=lambda: select('Rock')).pack()
 ttk.Button(root, text='Paper',command=lambda: select('Paper')).pack()
 ttk.Button(root, text='Scissors', command=lambda: select('Scissors')).pack()
+root.mainloop()
+
+"""
+Event Binding:
+
+Not all Tkinter widgets support the command option. Tkinter provides you with an
+alternative way for event binding via the bind() method.
+widget.bind(event, handler, add=None)
+If you want to register an additional handler, you can pass the '+' to the add
+argument. It means that you can have multiple event handlers that respond to the
+same event.
+"""
+#Event Binding
+import tkinter as tk
+from tkinter import ttk
+def return_pressed(event):
+	print('Return key pressed.')
+root = tk.Tk()
+btn = ttk.Button(root, text='Save')
+btn.bind('<KeyPress-Return>', return_pressed)
+btn.focus() # sets focus to button
+btn.pack(expand=True)
+root.mainloop()
+
+#Event Binding Multiple Handlers
+import tkinter as tk
+from tkinter import ttk
+def return_pressed(event):
+ print('Return key pressed.')
+def log(event):
+ print(event)
+root = tk.Tk()
+btn = ttk.Button(root, text='Save')
+btn.bind('<KeyPress-Return>', return_pressed)
+btn.bind('<KeyPress-Return>', log, add='+') # add so that log 
+# will not replace
+btn.focus()
+btn.pack(expand=True)
 root.mainloop()
