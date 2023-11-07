@@ -132,3 +132,12 @@ btn.bind('<KeyPress-Return>', log, add='+') # add so that log
 btn.focus()
 btn.pack(expand=True)
 root.mainloop()
+"""
+Event Binding
+The following shows the general syntax of an event pattern:
+<modifier-type-detail>
+For example, the <KeyPress-A> denotes a keyboard press of the key A, and
+<Alt-Control-KeyPress-KP_Delete> represents a keypress of Alt + Ctrl +
+Delete
+http://tkdocs.com/tutorial/concepts.html#events
+"""
