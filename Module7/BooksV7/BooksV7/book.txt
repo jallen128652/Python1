@@ -1,0 +1,36 @@
+1001, Beloved, FIC, 12.95, Y, 5, Toni, Morrison, Plume
+1002, Jazz, FIC, 12.95, Y, 4, Toni, Morrison, Plume
+1003, Song of Solomon, FIC, 14.0, Y, 3, Toni, Morrison, Plume
+1004, Group: Six People in Search of a Life, PSY, 10.4, Y, 2, Paul, Solotaroff, Berkley Publishing
+1005, A Deepness in the Sky, SFI, 7.19, Y, 6, Vernor, Vintage, Tor Books
+1006, Second Wind, MYS, 24.95, N, 2, Dick, Francis, Putnam Publishing Group
+1007, The Edge, MYS, 6.99, Y, 0, Dick, Francis, Jove Publications
+1008, Slay Ride, MYS, 6.99, Y, 1, Dick, Francis, Jove Publications
+1009, Magic Terror, HOR, 7.99, Y, 4, Peter, Straub, Fawcett Books
+1011, Black House, HOR, 18.81, N, 0, Peter, Straub, Random House
+1012, Dreamcatcher: A Novel, HOR, 19.6, N, 1, Stephen, King, Scribner
+1013, Black House, HOR, 18.81, N, 5, Stephen, King, Random House
+1014, A Guide to SQL, CMP, 37.95, Y, 3, Philip, Pratt, Course Technology
+1015, When Rabbit Howls, PSY, 6.29, Y, 7, Truddi, Chase, Jove Publications
+1016, Van Gogh and Gauguin, ART, 21.0, N, 1, Bradley, Collins, Westview Press
+1017, Catch-22, FIC, 12.0, Y, 3, Joseph, Heller, Scribner
+1018, Venice, ART, 24.5, N, 2, Gary, Wills, Simon & Schuster
+1019, Godel. Escher. Bach., PHI, 14.0, Y, 4, Douglas R., Hofstadter, Basic Books
+1021, To Kill a Mockingbird, FIC, 18.0, N, 3, Harper, Lee, HarperCollins Publishers
+1022, Band of Brothers, HIS, 9.6, Y, 1, Stephen E., Ambrose, Touchstone Books
+1023, Harry Potter and the Prisoner of Azkaban, SFI, 13.96, N, 7, J.K., Rowling, Scholastic Trade
+1024, Harry Potter and the Goblet of Fire, SFI, 18.16, N, 4, J.K., Rowling, Scholastic Trade
+1025, Nine Stories, FIC, 5.99, Y, 1, J.D., Salinger, Lb Books
+1026, Franny and Zooey, FIC, 5.99, Y, 4, J.D., Salinger, Lb Books
+1027, The Catcher in the Rye, FIC, 5.99, Y, 6, J.D., Salinger, Lb Books
+1028, Electric Light, POE, 14.0, N, 3, Seamus, Heaney, Farrar Straus & Giroux
+1029, The Stranger, FIC, 8.0, Y, 3, Albert, Camus, Vintage Books
+1031, The Fall, FIC, 8.0, Y, 0, Albert, Camus, Vintage Books
+1032, Van Gogh and Gauguin, ART, 21.0, N, 3, Bradley, Collins,  Jr.
+1033, Of Mice and Men, FIC, 6.95, Y, 5, John, Steinbeck, Penguin USA
+1034, Travels with Charley, TRA, 7.95, Y, 2, John, Steinbeck, Penguin USA
+1035, East of Eden, FIC, 12.95, Y, 4, John, Steinbeck, Penguin USA
+1036, The Grapes of Wrath, FIC, 13.0, Y, 0, John, Steinbeck, Penguin USA
+1037, Treasure Chests, ART, 24.46, N, 3, Randy, O'Rourke, Taunton Press
+1038, The Soul of a New Machine, SCI, 11.16, Y, 4, Tracy, Kidder, Back Bay Books
+1039, Treasure Chests, ART, 24.46, N, 6, Lon, Schleining, Taunton Press
