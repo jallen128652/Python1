@@ -12,6 +12,7 @@ import os
 import BookClass as bc
 import Helper as h
 import re
+import tkinter as tk
 
 #clear fx
 clear = lambda: os.system('cls')
@@ -171,7 +172,92 @@ while (go.upper() == "Y"):
         print("\nList is stored in output.txt.")
         file2.close()
         junk = input("\nPress Enter to return to the menu.")
-    # option6 exit program
+    #option6 Book Viewer GUI
+    elif choice == 6:
+        #create window
+        window = tk.Tk()
+        window.title("Set text")
+        window.resizable(0, 0)
+        #config window dimensions and grid
+        window.rowconfigure(0, minsize=7, weight=1)
+        window.rowconfigure(1, minsize=7, weight=1)
+        window.rowconfigure(2, minsize=7, weight=1)
+        window.rowconfigure(3, minsize=7, weight=1)
+        window.rowconfigure(4, minsize=7, weight=1)
+        window.rowconfigure(5, minsize=7, weight=1)
+        window.rowconfigure(6, minsize=7, weight=1)
+        window.rowconfigure(7, minsize=7, weight=1)
+        window.rowconfigure(8, minsize=7, weight=1)
+        window.rowconfigure(9, minsize=12, weight=1)
+        window.columnconfigure(0, minsize=20, weight=1)
+        window.columnconfigure(1, minsize=20, weight=1)
+        window.columnconfigure(2, minsize=20, weight=1)
+        #create buttons on first column
+        btn_opn = tk.Button(window, text="Open", command="")
+        btn_opn.grid(row=9, column=0, ipadx=8, pady=0)        
+        btn_nxt = tk.Button(window, text="Next", command="")
+        btn_nxt.grid(row=9, column=1, ipadx=10, padx=10, pady=0)      
+        btn_prv = tk.Button(window, text="Previous", command="")
+        btn_prv.grid(row=9, column=2, pady=0, sticky="w")
+        #create labels on the second column
+        label1 = tk.Label(window, text='ID')
+        label1.grid(column=1, row=0) 
+        label2 = tk.Label(window, text='Title')
+        label2.grid(column=1, row=1)
+        label3 = tk.Label(window, text='Genre')
+        label3.grid(column=1, row=2)
+        label4 = tk.Label(window, text='Price')
+        label4.grid(column=1, row=3)
+        label5 = tk.Label(window, text='Paperback')
+        label5.grid(column=1, row=4) 
+        label6 = tk.Label(window, text='On Hand')
+        label6.grid(column=1, row=5)
+        label7 = tk.Label(window, text='First Name')
+        label7.grid(column=1, row=6)
+        label8 = tk.Label(window, text='Last Name')
+        label8.grid(column=1, row=7)
+        label8 = tk.Label(window, text='Publisher')
+        label8.grid(column=1, row=8)
+        #create entries on the third column
+        entryvar1 = tk.StringVar()
+        entry1 = tk.Entry(window, textvariable=entryvar1)
+        entry1.grid(column=2, row=0, pady=1, padx=2)
+        entry1.focus()
+        entryvar2 = tk.StringVar()
+        entry2 = tk.Entry(window, textvariable=entryvar2)
+        entry2.grid(column=2, row=1, pady=1, padx=2)
+        entry2.focus()
+        entryvar3 = tk.StringVar()
+        entry3 = tk.Entry(window, textvariable=entryvar3)
+        entry3.grid(column=2, row=2, padx=2, pady=1)
+        entry3.focus()
+        entryvar4 = tk.StringVar()
+        entry4 = tk.Entry(window, textvariable=entryvar4)
+        entry4.grid(column=2, row=3, pady=1, padx=2)
+        entry4.focus()
+        entryvar5 = tk.StringVar()
+        entry5 = tk.Entry(window, textvariable=entryvar5)
+        entry5.grid(column=2, row=4, padx=2, pady=1)
+        entry5.focus()
+        entryvar6 = tk.StringVar()
+        entry6 = tk.Entry(window, textvariable=entryvar6)
+        entry6.grid(column=2, row=5, pady=1, padx=2)
+        entry6.focus()
+        entryvar7 = tk.StringVar()
+        entry7 = tk.Entry(window, textvariable=entryvar7)
+        entry7.grid(column=2, row=6, padx=2, pady=1)
+        entry7.focus()
+        entryvar8 = tk.StringVar()
+        entry8 = tk.Entry(window, textvariable=entryvar8)
+        entry8.grid(column=2, row=7, pady=1, padx=2)
+        entry8.focus()
+        entryvar9 = tk.StringVar()
+        entry9 = tk.Entry(window, textvariable=entryvar9)
+        entry9.grid(column=2, row=8, padx=2, pady=1)
+        entry9.focus()
+        #event handler and listener fx from Tkinter
+        window.mainloop()
+    # option7 exit program
     elif choice == 0:
         print("\nExiting program...")
         #update setinal value

@@ -18,7 +18,8 @@ def printMenu():
         print("2. Add Book Entry")
         print("3. Find Book Entry")
         print("4. Delete Book Entry")
-        print("5. Write Book List to File")    
+        print("5. Write Book List to File")
+        print("6. Book Viewer")
         print("0. Quit")
     except:
         print("Menu failed to print.")
