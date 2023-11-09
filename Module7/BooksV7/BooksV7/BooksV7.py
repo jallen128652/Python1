@@ -178,6 +178,8 @@ while (go.upper() == "Y"):
         window = tk.Tk()
         window.title("Set text")
         window.resizable(0, 0)
+        def openFile():
+            file3 = open("book.txt", "r")
         #config window dimensions and grid
         window.rowconfigure(0, minsize=7, weight=1)
         window.rowconfigure(1, minsize=7, weight=1)
@@ -193,7 +195,7 @@ while (go.upper() == "Y"):
         window.columnconfigure(1, minsize=20, weight=1)
         window.columnconfigure(2, minsize=20, weight=1)
         #create buttons on first column
-        btn_opn = tk.Button(window, text="Open", command="")
+        btn_opn = tk.Button(window, text="Open", command=openFile)
         btn_opn.grid(row=9, column=0, ipadx=8, pady=0)        
         btn_nxt = tk.Button(window, text="Next", command="")
         btn_nxt.grid(row=9, column=1, ipadx=10, padx=10, pady=0)      
