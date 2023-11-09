@@ -179,7 +179,20 @@ while (go.upper() == "Y"):
         window.title("Set text")
         window.resizable(0, 0)
         def openFile():
-            file3 = open("book.txt", "r")
+            #open the book.txt file
+            #Load the file records into a List of BookClass objects
+            #Display the first book or give a message box error if the file is empty
+            return 
+        def nextBook():
+            #the function displays the next record in the book List. 
+            #Ensures you don’t go past the end of List.
+            #Gives a message box if the booklist is empty.
+            return
+        def prevBook():
+            #the function displays the next record in the book List. 
+            #Ensures you don’t go pout of list bounds.
+            #Gives a message box if the booklist is empty.
+            return
         #config window dimensions and grid
         window.rowconfigure(0, minsize=7, weight=1)
         window.rowconfigure(1, minsize=7, weight=1)
