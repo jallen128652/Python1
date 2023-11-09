@@ -210,9 +210,9 @@ while (go.upper() == "Y"):
         #create buttons on first column
         btn_opn = tk.Button(window, text="Open", command=openFile)
         btn_opn.grid(row=9, column=0, ipadx=8, pady=0)        
-        btn_nxt = tk.Button(window, text="Next", command="")
+        btn_nxt = tk.Button(window, text="Next", command=nextBook)
         btn_nxt.grid(row=9, column=1, ipadx=10, padx=10, pady=0)      
-        btn_prv = tk.Button(window, text="Previous", command="")
+        btn_prv = tk.Button(window, text="Previous", command=prevBook)
         btn_prv.grid(row=9, column=2, pady=0, sticky="w")
         #create labels on the second column
         label1 = tk.Label(window, text='ID')
