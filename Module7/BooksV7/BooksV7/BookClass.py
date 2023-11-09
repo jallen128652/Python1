@@ -40,10 +40,6 @@ class BookClass:
     def setPrice(self, fPrice):
         self.price = fPrice
         print(fPrice)
-    # function for the book viewer to pull values    
-    def bookViewer(self):
-        return self.id, self.title, self.genre, self.price, self.paperback, self.onHand, self.authorFname, self.authorLname, self.publisher
-        
 #test the books class
 #x = BookClass("1234", "JJ's", "FIC", 22.99, "Y", 5, "John", "Smith", "Pubbies")
 #x.printBookInfo()
