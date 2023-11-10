@@ -3,7 +3,7 @@
 # Program Name: BooksV6
 # Description: This program manipulates the book.txt file, stores a list
 # of obj's, prints, adds new entries, outputs to files and conducts error
-# handling. It now has a GUI component that allows user interaction.
+# handling. It now has a GUI component that allows user interaction via book viewer.
 
 # Note: Remember to save often and commit to git once tested
 
