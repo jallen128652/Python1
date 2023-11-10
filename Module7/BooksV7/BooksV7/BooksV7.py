@@ -13,13 +13,16 @@ import BookClass as bc
 import Helper as h
 import re
 import tkinter as tk
+import tkinter as tk
+from tkinter import ttk
+from tkinter.messagebox import showerror, showwarning, showinfo
 
 #clear fx
 clear = lambda: os.system('cls')
 
 #create list for objects
 books = []
-
+books2 = []
 #create vars for items
 sID = ""
 sTitle = ""
@@ -176,23 +179,101 @@ while (go.upper() == "Y"):
     elif choice == 6:
         #create window
         window = tk.Tk()
-        window.title("Set text")
+        window.title("Book Viewer")
+        window.geometry('300x160')
         window.resizable(0, 0)
+        #functions for the three buttons
         def openFile():
+            #global vars and lists
+            global books2, x
+            global file3
+            global entryvar1, entryvar2, entryvar3, entryvar4, entryvar5, entryvar6, entryvar7, entryvar8, entryvar9
+            #declare global accumulator
+            x = 0
             #open the book.txt file
-            #Load the file records into a List of BookClass objects
+            try:
+                file3 = open("book.txt", "r")
+                #Load the file records into a List of BookClass objects
+                for sLine in file3:
+                #separate and strip data
+                    record = sLine.strip().split(",")
+                    #store in lists
+                    sID = record[0].strip()
+                    sTitle = record[1].strip()
+                    sGenre = record[2].strip()
+                    fPrice = float(record[3].strip())
+                    sPaperback = record[4].strip()  
+                    iOnHand = int(record[5].strip())
+                    sAuthorFirst = record[6].strip()
+                    sAuthorLast = record[7].strip()
+                    sPublisher = record[8].strip()
+                    #instantiate BookClass obj's and add line of values to obj's, store in books list
+                    books2.append(bc.BookClass(sID, sTitle, sGenre, fPrice, sPaperback, iOnHand, sAuthorFirst, sAuthorLast, sPublisher))
+                file3.close()
             #Display the first book or give a message box error if the file is empty
-            return 
+                if len(books2) > 0:
+                    #sets the first book into the entryvars1-9
+                    entryvar1.set(books2[x].id)
+                    entryvar2.set(books2[x].title)
+                    entryvar3.set(books2[x].genre)
+                    entryvar4.set(str(books2[x].price))
+                    entryvar5.set(books2[x].paperback)
+                    entryvar6.set(str(books2[x].onHand))
+                    entryvar7.set(books2[x].authorFname)
+                    entryvar8.set(books2[x].authorLname)
+                    entryvar9.set(books2[x].publisher)
+                else:
+                    showerror("Error", "Booklist is empty")
+            except FileNotFoundError:
+                showerror("Error", "File not found")
         def nextBook():
-            #the function displays the next record in the book List. 
-            #Ensures you don’t go past the end of List.
+            #the function displays the next record in the book List.   
+            global books2, x
+            global entryvar1, entryvar2, entryvar3, entryvar4, entryvar5, entryvar6, entryvar7, entryvar8, entryvar9
             #Gives a message box if the booklist is empty.
-            return
+            if len(books2) == 0:
+                showinfo("Info", "Booklist is empty") 
+            #add 1 to x
+            x += 1
+            #Ensures you don't go past the end of List.
+            if x < len(books2):                
+                #sets the next book vals
+                entryvar1.set(books2[x].id)
+                entryvar2.set(books2[x].title)
+                entryvar3.set(books2[x].genre)
+                entryvar4.set(str(books2[x].price))
+                entryvar5.set(books2[x].paperback)
+                entryvar6.set(str(books2[x].onHand))
+                entryvar7.set(books2[x].authorFname)
+                entryvar8.set(books2[x].authorLname)
+                entryvar9.set(books2[x].publisher)                
+            else:
+                #lets you know you reached the end
+                showinfo("Info", "You have reached the end of the list.")
         def prevBook():
-            #the function displays the next record in the book List. 
-            #Ensures you don’t go pout of list bounds.
+            #the function displays the next record in the book List.   
+            global books2, x
+            global entryvar1, entryvar2, entryvar3, entryvar4, entryvar5, entryvar6, entryvar7, entryvar8, entryvar9
             #Gives a message box if the booklist is empty.
-            return
+            if len(books2) == 0:
+                showinfo("Info", "Booklist is empty")
+            #subtract 1 from x
+            x -= 1
+            #Ensures you don't go out of list bounds.
+            if x >= 0:
+                #sets the previous book vals
+                entryvar1.set(books2[x].id)
+                entryvar2.set(books2[x].title)
+                entryvar3.set(books2[x].genre)
+                entryvar4.set(str(books2[x].price))
+                entryvar5.set(books2[x].paperback)
+                entryvar6.set(str(books2[x].onHand))
+                entryvar7.set(books2[x].authorFname)
+                entryvar8.set(books2[x].authorLname)
+                entryvar9.set(books2[x].publisher)                
+            else:
+                #lets you know you reached the beginning of the list
+                showinfo("Info", "You have reached the beginning of the list.")
         #config window dimensions and grid
         window.rowconfigure(0, minsize=7, weight=1)
         window.rowconfigure(1, minsize=7, weight=1)
@@ -206,33 +287,33 @@ while (go.upper() == "Y"):
         window.rowconfigure(9, minsize=12, weight=1)
         window.columnconfigure(0, minsize=20, weight=1)
         window.columnconfigure(1, minsize=20, weight=1)
-        window.columnconfigure(2, minsize=20, weight=1)
+        window.columnconfigure(2, minsize=60, weight=3)
         #create buttons on first column
         btn_opn = tk.Button(window, text="Open", command=openFile)
-        btn_opn.grid(row=9, column=0, ipadx=8, pady=0)        
+        btn_opn.grid(row=9, column=0, ipadx=8, pady=3, padx=3)        
         btn_nxt = tk.Button(window, text="Next", command=nextBook)
-        btn_nxt.grid(row=9, column=1, ipadx=10, padx=10, pady=0)      
+        btn_nxt.grid(row=9, column=1, ipadx=10, padx=10, pady=3, sticky="e")      
         btn_prv = tk.Button(window, text="Previous", command=prevBook)
-        btn_prv.grid(row=9, column=2, pady=0, sticky="w")
+        btn_prv.grid(row=9, column=2, pady=3, padx=50, sticky="e")
         #create labels on the second column
         label1 = tk.Label(window, text='ID')
-        label1.grid(column=1, row=0) 
+        label1.grid(column=1, row=0, sticky="w") 
         label2 = tk.Label(window, text='Title')
-        label2.grid(column=1, row=1)
+        label2.grid(column=1, row=1, sticky="w")
         label3 = tk.Label(window, text='Genre')
-        label3.grid(column=1, row=2)
+        label3.grid(column=1, row=2, sticky="w")
         label4 = tk.Label(window, text='Price')
-        label4.grid(column=1, row=3)
+        label4.grid(column=1, row=3, sticky="w")
         label5 = tk.Label(window, text='Paperback')
-        label5.grid(column=1, row=4) 
+        label5.grid(column=1, row=4, sticky="w") 
         label6 = tk.Label(window, text='On Hand')
-        label6.grid(column=1, row=5)
+        label6.grid(column=1, row=5, sticky="w")
         label7 = tk.Label(window, text='First Name')
-        label7.grid(column=1, row=6)
+        label7.grid(column=1, row=6, sticky="w")
         label8 = tk.Label(window, text='Last Name')
-        label8.grid(column=1, row=7)
+        label8.grid(column=1, row=7, sticky="w")
         label8 = tk.Label(window, text='Publisher')
-        label8.grid(column=1, row=8)
+        label8.grid(column=1, row=8, sticky="w")
         #create entries on the third column
         entryvar1 = tk.StringVar()
         entry1 = tk.Entry(window, textvariable=entryvar1)
